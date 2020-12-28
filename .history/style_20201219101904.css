@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+.logo {
+  flex-basis: 20%;
+}
+.logo h1 {
+  text-align: center;
+  color: red;
+  font-size: 52px;
+  margin: 20 20px;
+}
+.logo h1 a {
+  text-decoration: none;
+  color: red;
+}
+#center {
+  margin-left: 5%;
+}
+.tableUp {
+  margin: 150 0 0 100px;
+  float: left;
+}
+.tableDown {
+  margin: 150 0 0 100px;
+}
+#bottomMenu {
+  background-color: gainsboro;
+  position: absolute;
+  bottom: 10px;
+  margin-left: 40%;
+}
