@@ -76,9 +76,10 @@
   text-align: center;
 }
 .addToBasket {
-  float: ;
+  float: left;
 }
 .dishShape {
+  float: left;
   fill: #90ee90;
 }
 

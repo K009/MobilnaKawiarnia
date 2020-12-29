@@ -76,12 +76,8 @@
   text-align: center;
 }
 .addToBasket {
-  float: ;
+  float: left;
 }
-.dishShape {
-  fill: #90ee90;
-}
-
-.dishShape:hover {
-  fill: #88e388;
+svg {
+  float: left;
 }

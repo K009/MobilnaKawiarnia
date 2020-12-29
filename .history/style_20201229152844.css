@@ -76,7 +76,7 @@
   text-align: center;
 }
 .addToBasket {
-  float: ;
+  position: relative;
 }
 .dishShape {
   fill: #90ee90;

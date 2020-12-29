@@ -73,15 +73,4 @@
 .dish {
   margin: 100 0 0 100px;
   float: left;
-  text-align: center;
-}
-.addToBasket {
-  float: ;
-}
-.dishShape {
-  fill: #90ee90;
-}
-
-.dishShape:hover {
-  fill: #88e388;
 }

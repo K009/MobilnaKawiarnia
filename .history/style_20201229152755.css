@@ -53,11 +53,7 @@
   width: 100%;
   bottom: 10px;
 }
-.yui3-button {
-  margin: 10px 0px 10px 0px;
-  color: #fff;
-  background-color: #3476b7;
-}
+
 #mycalendar {
   bottom: 30px;
   left: 37%;
@@ -76,7 +72,7 @@
   text-align: center;
 }
 .addToBasket {
-  float: ;
+  text-align: center;
 }
 .dishShape {
   fill: #90ee90;
