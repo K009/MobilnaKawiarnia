@@ -10,6 +10,34 @@ console.log('xxdd');
 //   console.log('klikniety!!');
 // };
 
+let clickedTable = [-1, -1];
+let choosenDay = 0;
+let choosenHour = 0;
+
+
+
+// let reservations = [
+//   {
+//     name: 'Ala',
+//     age:12
+//   },
+//   {
+//     name:'Tom',
+//     age:49
+//   }
+// ]
+// console.log(reservations[0].age)
+// reservations.forEach(function(element){
+//   console.log(element.name)
+// })
+
+
+
+
+
+
+
+
 function submit(clicked_id) {
   console.log(clicked_id);
 }
@@ -192,4 +220,89 @@ function updateCartTotal() {
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName('cart-total-price')[0].innerText =
     total + 'zł';
+}
+
+
+let reservations = []
+
+for (let i = 0; i < 8; i++){
+  reservations[i] = [];
+  for (let j = 0; j < 14; j++){
+    reservations[i][j] = {
+      table0: "free",
+      table1: "free",
+      table2: "free",
+      table3: "free",
+      table4: "free",
+      table5: "reserved"
+    }
+  }
+}
+
+
+function updateTables(hour, day){
+  const tables = reservations[hour][day];
+  let i = 0;
+  console.log(tables);
+  for (const table in tables){
+    if (tables[table] == "free"){
+      document.getElementById(i).style.fill = "green";
+      i = i + 1;
+    }
+    else if(tables[table] == "reserved"){
+      document.getElementById(i).style.fill = "red";
+      i = i + 1;
+    }
+  }
+}
+
+let k = 0;
+
+function tableClicked(id){
+  if (k == 0){
+    updateTables(0,0);
+    k = k + 1;
+  }
+    if (document.getElementById(id).style.fill == "red"){
+      return;
+    }
+
+    if (document.getElementById(id).style.fill == "green"){
+      if (!addClickedTable(id)){
+        console.log("False");
+        return;
+      }
+      document.getElementById(id).style.fill = "orange";
+      return;
+    }
+
+    if (document.getElementById(id).style.fill == "orange"){
+      removeClickedTable(id);
+      document.getElementById(id).style.fill = "green";
+      return;
+    }
+  }
+
+function addClickedTable(id){
+  console.log(clickedTable);
+  if (clickedTable[0] != -1 && clickedTable[1] != -1){
+    return false;
+  }
+  if (clickedTable[0] == -1){
+    clickedTable[0] = id;
+    return true;
+  }
+  if (clickedTable[1] == -1){
+    clickedTable[1] = id;
+    return true;
+  }
+}
+
+function removeClickedTable(id){
+  if (clickedTable[0] == id){
+    clickedTable[0] = -1;
+  }
+  if (clickedTable[1] == id){
+    clickedTable[1] = -1;
+  }
 }
