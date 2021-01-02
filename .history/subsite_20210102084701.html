@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Mobilna Kawiarnia</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> -->
+    <script src="http://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body> 
+      <div class="main">
+    <div class="logo">
+        <h2><a href="subsite.html">Zobacz dania</a></h2>
+      <h1><a href="index.html">Mobilna Kawiarnia</a></h1>
+      <h2><a href="subsite.html">Zamów</a></h2>
+    </div>
+    <div id="center">
+        <div id="basket">
+        <button id="basketButton" onclick="choose()">Koszyk</button>
+    </div>
+    <div id="dishes">
+        <div class="dish">
+            <button class="addToBasket" onclick="addToBasket(this.id)">Dodaj do koszyka</button>
+            <br></br>
+            <svg width="300" height="110">
+                <rect class ="dishShape" width="300" height="100"/>
+            </svg>
+            <h3>Frytki<br>10.00zl</h3>
+        </div>
+
+        <div class="dish">
+            <button class="addToBasket" onclick="addToBasket(this.id)">Dodaj do koszyka</button>
+            <br></br>
+            <svg width="300" height="110">
+                <rect class ="dishShape" width="300" height="100" />
+            </svg>
+            <h3>Szarlotka<br>20.00zl</h3>
+        </div>
+
+        <div class="dish">
+            <button class="addToBasket" onclick="addToBasket(this.id)">Dodaj do koszyka</button>
+            <br></br>
+            <svg width="300" height="110">
+                <rect class ="dishShape" width="300" height="100" />
+            </svg>
+            <h3>Szejk waniliowy<br>12.00zl</h3>
+        </div>
+        <div class="addingPopUp">Produkt został dodany.<br>Przejdź do koszyka, aby złożyć zamówienie.<button class="ok" onclick="closeForm()">OK</button></div>
+        <button class="open-button" onclick="openForm()">Open Form</button>
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <h1>Login</h1>
+          
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+              <button type="submit" class="btn">Login</button>
+              <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+
+    </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

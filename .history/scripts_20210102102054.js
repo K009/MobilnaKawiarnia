@@ -80,7 +80,7 @@ function closePopUp() {
   document.getElementById('addingPopUp').style.display = 'none';
 }
 
-//KOD
+//KOD Z GITHUBA
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);
 } else {
@@ -163,7 +163,7 @@ function addItemToCart(title, price, imageSrc) {
       <span class="cart-price cart-column">${price}</span>
       <div class="cart-quantity cart-column">
           <input class="cart-quantity-input" type="number" value="1">
-          <button class="btn btn-danger" type="button">USUŃ</button>
+          <button class="btn btn-danger" type="button">USUŃ Z KOSZYKA</button>
       </div>`;
   cartRow.innerHTML = cartRowContents;
   cartItems.append(cartRow);

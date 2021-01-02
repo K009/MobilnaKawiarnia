@@ -20,25 +20,25 @@
         <h1 class="band-name band-name-large"><a href="index.html">Mobilna Kawiarnia</a></h1>
     </header>
       <div class="main">
-    <div id="center"></div>
-    <div id="basket">
-        <button class=" btn btn-primary basket" onclick="goToBasket()">Koszyk</button>
+    <div id="center">
+        <div id="basket">
+        <button id="basketButton" onclick="goToBasket()">Koszyk</button>
     </div>
     <div class="shop-items">
         <div class="shop-item">
             <span class="shop-item-title">Frytki</span>
-            <img class="shop-item-image" src="Images/frytki.jpg">
+            <img class="shop-item-image" src="Images/frytki.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">9.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button">DODAJ DO KOSZYKA</button>
             </div>
         </div>
         <div class="shop-item">
             <span class="shop-item-title">Szarlotka</span>
-            <img class="shop-item-image" src="Images/szarlotka.jpg">
+            <img class="shop-item-image" src="Images/szarlotka.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">23.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)" >DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button"type="button">DODAJ DO KOSZYKA</button>
             </div>
         </div>
         <div class="shop-item">
@@ -46,7 +46,7 @@
             <img class="shop-item-image" src="Images/szejk.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">8.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button">DODAJ DO KOSZYKA</button>
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="cart-total">
                     <strong class="cart-total-title">Całość</strong>
-                    <span class="cart-total-price">0.0 zł</span>
+                    <span class="cart-total-price">$0</span>
                 </div>
                 <button class="btn btn-primary btn-purchase" type="button">ZAPŁAĆ</button>
             </section>
@@ -69,8 +69,11 @@
             <button class="pay" onclick="closeBasket()">Płacę teraz</button>
         </div>
 
+
+
+        <div id="addingPopUp">Produkt został dodany.<br>Przejdź do koszyka, aby złożyć zamówienie.<button class="ok" onclick="closePopUp()">OK</button></div>
+
     </div>
-    <div id="addingPopUp">Produkt został dodany.<br>Przejdź do koszyka, aby złożyć zamówienie.<button class="btn btn-primary ok" onclick="closePopUp()">OK</button></div>
     </div>
 </div>
 

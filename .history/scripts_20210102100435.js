@@ -80,12 +80,7 @@ function closePopUp() {
   document.getElementById('addingPopUp').style.display = 'none';
 }
 
-//KOD
-if (document.readyState == 'loading') {
-  document.addEventListener('DOMContentLoaded', ready);
-} else {
-  ready();
-}
+//KOD Z GITHUBA
 
 function ready() {
   var removeCartItemButtons = document.getElementsByClassName('btn-danger');
@@ -151,7 +146,7 @@ function addItemToCart(title, price, imageSrc) {
   var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
   for (var i = 0; i < cartItemNames.length; i++) {
     if (cartItemNames[i].innerText == title) {
-      alert('Ten produkt został już dodany do Twojego koszyka');
+      alert('This item is already added to the cart');
       return;
     }
   }
@@ -163,7 +158,7 @@ function addItemToCart(title, price, imageSrc) {
       <span class="cart-price cart-column">${price}</span>
       <div class="cart-quantity cart-column">
           <input class="cart-quantity-input" type="number" value="1">
-          <button class="btn btn-danger" type="button">USUŃ</button>
+          <button class="btn btn-danger" type="button">REMOVE</button>
       </div>`;
   cartRow.innerHTML = cartRowContents;
   cartItems.append(cartRow);
@@ -191,5 +186,5 @@ function updateCartTotal() {
   }
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName('cart-total-price')[0].innerText =
-    total + 'zł';
+    '$' + total;
 }

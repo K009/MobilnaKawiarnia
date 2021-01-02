@@ -17,60 +17,80 @@
                 <li><a href="subsite.html">Zamów</a></li>
             </ul>
         </nav>
-        <h1 class="band-name band-name-large"><a href="index.html">Mobilna Kawiarnia</a></h1>
+        <h1 class="band-name band-name-large">Mobilna Kawiarnia</h1>
     </header>
       <div class="main">
-    <div id="center"></div>
-    <div id="basket">
-        <button class=" btn btn-primary basket" onclick="goToBasket()">Koszyk</button>
+    <div id="center">
+        <div id="basket">
+        <button id="basketButton" onclick="goToBasket()">Koszyk</button>
     </div>
     <div class="shop-items">
         <div class="shop-item">
             <span class="shop-item-title">Frytki</span>
-            <img class="shop-item-image" src="Images/frytki.jpg">
+            <img class="shop-item-image" src="Images/Album 1.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">9.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
             </div>
         </div>
         <div class="shop-item">
             <span class="shop-item-title">Szarlotka</span>
-            <img class="shop-item-image" src="Images/szarlotka.jpg">
+            <img class="shop-item-image" src="Images/Album 2.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">23.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)" >DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
             </div>
         </div>
         <div class="shop-item">
             <span class="shop-item-title">Szejk waniliowy</span>
-            <img class="shop-item-image" src="Images/szejk.png">
+            <img class="shop-item-image" src="Images/Album 3.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">8.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
             </div>
         </div>
     </div>
         <div id="basketForm">
-            <section class="container content-section">
-                <div class="cart-row">
-                    <span class="cart-item cart-header cart-column">TWOJE PRODUKTY</span>
-                    <span class="cart-price cart-header cart-column">CENA</span>
-                    <span class="cart-quantity cart-header cart-column">ILOŚĆ</span>
-                </div>
-                <div class="cart-items">
-                </div>
-                <div class="cart-total">
-                    <strong class="cart-total-title">Całość</strong>
-                    <span class="cart-total-price">0.0 zł</span>
-                </div>
-                <button class="btn btn-primary btn-purchase" type="button">ZAPŁAĆ</button>
-            </section>
+            Twoje produkty | Cena
+            <table style="width:100%">
+                <tr>
+                  <th>Twoje produkty</th>
+                  <th>Cena</th>
+                </tr>
+                <tr>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Eve</td>
+                  <td>Jackson</td>
+                  <td>94</td>
+                </tr>
+              </table>
             <button class="back" onclick="closeBasket()">Powrót do menu</button>
             <button class="pay" onclick="closeBasket()">Płacę teraz</button>
         </div>
 
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
+
+        <div id="addingPopUp">Produkt został dodany.<br>Przejdź do koszyka, aby złożyć zamówienie.<button class="ok" onclick="closePopUp()">OK</button></div>
+
     </div>
-    <div id="addingPopUp">Produkt został dodany.<br>Przejdź do koszyka, aby złożyć zamówienie.<button class="btn btn-primary ok" onclick="closePopUp()">OK</button></div>
     </div>
 </div>
 

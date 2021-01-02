@@ -123,18 +123,19 @@
 }
 #addingPopUp {
   display: none;
+  border: 2px dotted blue;
   border-radius: 5px;
   color: white;
-  background-color: rgb(182, 176, 176);
+  background-color: gray;
   width: 600px;
-  height: 95;
+  height: 90;
   font-size: 32;
   position: absolute;
   text-align: center;
-  top: 20%;
-  left: 30%;
+  top: 10%;
+  left: 28%;
 }
-/** KOD**/
+/** KOD Z GITHUBA **/
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 @import url('https://fonts.googleapis.com/css?family=Metal+Mania');
 

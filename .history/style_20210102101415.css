@@ -66,7 +66,7 @@
   z-index: 1000;
 }
 .basket {
-  font-size: 22;
+  font-size: 26;
 }
 #basket {
   position: relative;
@@ -123,18 +123,15 @@
 }
 #addingPopUp {
   display: none;
-  border-radius: 5px;
-  color: white;
-  background-color: rgb(182, 176, 176);
-  width: 600px;
-  height: 95;
-  font-size: 32;
+  background-color: gray;
+  width: 250px;
+  height: 150;
   position: absolute;
   text-align: center;
-  top: 20%;
-  left: 30%;
+  top: 38%;
+  left: 40%;
 }
-/** KOD**/
+/** KOD Z GITHUBA **/
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 @import url('https://fonts.googleapis.com/css?family=Metal+Mania');
 

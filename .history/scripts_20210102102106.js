@@ -80,7 +80,7 @@ function closePopUp() {
   document.getElementById('addingPopUp').style.display = 'none';
 }
 
-//KOD
+//KOD Z GITHUBA
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);
 } else {
