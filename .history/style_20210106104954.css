@@ -88,17 +88,6 @@
   border: 2px dotted;
   display: none;
 }
-.popup {
-  background-color: white;
-  width: 700px;
-  height: 500px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 27%;
-  border: 2px dotted;
-  display: none;
-}
 .back {
   background-color: gainsboro;
   font-size: 26;
@@ -132,6 +121,21 @@
 .dishShape:hover {
   fill: #88e388;
 }
+@keyframes myAnimation {
+  0% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotateX(0deg);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+}
 
 @keyframes fadeOut {
   0% {
@@ -142,10 +146,44 @@
   }
 }
 
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 #addingPopUp {
-  animation-name: fadeOut;
-  animation-duration: 2000ms;
-  animation-fill-mode: forwards;
+  animation-name: fadeOut ease 3s;
   display: none;
   opacity: 50%;
   border-radius: 5px;
@@ -426,9 +464,6 @@ header a {
   width: 45%;
 }
 
-.cart-toData {
-  width: 100%;
-}
 .cart-price {
   width: 20%;
   font-size: 1.2em;
@@ -506,104 +541,4 @@ header a {
   display: block;
   margin: 40px auto 80px auto;
   font-size: 1.75em;
-}
-
-.input-data {
-  float: left;
-  margin-top: 8px;
-  margin-left: 5px;
-  border-radius: 15%;
-  border-width: 1;
-}
-
-h2 {
-  float: left;
-}
-
-#dataContainer {
-  margin-left: 20px;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
-
-.input-container {
-  font-family: 'Noto Sans', sans-serif;
-  position: relative;
-  margin-bottom: 25px;
-}
-.input-container label {
-  font-family: 'Noto Sans', sans-serif;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-size: 16px;
-  color: black;
-  pointer-event: none;
-  transition: all 0.5s ease-in-out;
-}
-.input-container input {
-  font-family: 'Noto Sans', sans-serif;
-  border: 0;
-  border-bottom: 1px solid #555;
-  background: transparent;
-  width: 100%;
-  padding: 8px 0 5px 0;
-  font-size: 16px;
-  color: black;
-}
-.input-container input:focus {
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #e74c3c;
-}
-.input-container input:focus ~ label,
-.input-container input:valid ~ label {
-  top: -12px;
-  font-size: 12px;
-}
-
-summary {
-  font-family: 'Noto Sans', sans-serif;
-  color: #2d9cdb;
-  text-align: left;
-  font-size: 20;
-  margin-left: 50;
-  margin-top: 30;
-}
-
-summaryPrice {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-  position: absolute;
-  bottom: 200;
-  left: 50;
-}
-
-imga {
-  width: 70px;
-  height: 30px;
-}
-
-paymentMethodTitle {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-}
-#elementsOnTheRight {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-  background-color: #fff;
-  width: 250;
-  height: 250;
-  position: absolute;
-  right: 50;
-  margin-top: 25;
-}
-
-img:hover {
-  opacity: 90%;
 }

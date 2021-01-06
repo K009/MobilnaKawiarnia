@@ -88,7 +88,7 @@
   border: 2px dotted;
   display: none;
 }
-.popup {
+#getUserData {
   background-color: white;
   width: 700px;
   height: 500px;
@@ -544,7 +544,6 @@ h2 {
   transition: all 0.5s ease-in-out;
 }
 .input-container input {
-  font-family: 'Noto Sans', sans-serif;
   border: 0;
   border-bottom: 1px solid #555;
   background: transparent;
@@ -562,48 +561,4 @@ h2 {
 .input-container input:valid ~ label {
   top: -12px;
   font-size: 12px;
-}
-
-summary {
-  font-family: 'Noto Sans', sans-serif;
-  color: #2d9cdb;
-  text-align: left;
-  font-size: 20;
-  margin-left: 50;
-  margin-top: 30;
-}
-
-summaryPrice {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-  position: absolute;
-  bottom: 200;
-  left: 50;
-}
-
-imga {
-  width: 70px;
-  height: 30px;
-}
-
-paymentMethodTitle {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-}
-#elementsOnTheRight {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-  background-color: #fff;
-  width: 250;
-  height: 250;
-  position: absolute;
-  right: 50;
-  margin-top: 25;
-}
-
-img:hover {
-  opacity: 90%;
 }

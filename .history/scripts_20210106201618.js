@@ -507,33 +507,11 @@ function goToPayment() {
 
   console.log(productsComplex);
 
-  let tag2 = document.createElement('paymentMethodTitle');
-  var text2 = document.createTextNode('Wybierz metodę płatności:');
+  let tag2 = document.createElement('summaryPrice');
+  var text2 = document.createTextNode('Suma: ' + total.toFixed(2) + 'zł');
   tag2.appendChild(text2);
-  var element2 = document.getElementById('elementsOnTheRight');
+  var element2 = document.getElementById('payments');
   element2.appendChild(tag2);
-
-  var img = document.createElement('img');
-  img.src = 'Images/ing.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
-  img.style.marginTop = '10px';
-
-  var img = document.createElement('img');
-  img.src = 'Images/blik.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
-
-  var img = document.createElement('img');
-  img.src = 'Images/alior.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
 }
 
 let reservations = [];

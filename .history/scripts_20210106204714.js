@@ -519,7 +519,6 @@ function goToPayment() {
   img.style.width = '140px';
   img.style.height = '70px';
   img.style.float = 'left';
-  img.style.marginTop = '10px';
 
   var img = document.createElement('img');
   img.src = 'Images/blik.png';

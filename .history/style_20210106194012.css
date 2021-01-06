@@ -581,29 +581,3 @@ summaryPrice {
   bottom: 200;
   left: 50;
 }
-
-imga {
-  width: 70px;
-  height: 30px;
-}
-
-paymentMethodTitle {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-}
-#elementsOnTheRight {
-  font-family: 'Noto Sans', sans-serif;
-  color: black;
-  font-size: 20;
-  background-color: #fff;
-  width: 250;
-  height: 250;
-  position: absolute;
-  right: 50;
-  margin-top: 25;
-}
-
-img:hover {
-  opacity: 90%;
-}

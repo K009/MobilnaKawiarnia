@@ -30,7 +30,7 @@
             <img class="shop-item-image" src="Images/frytki.jpg">
             <div class="shop-item-details">
                 <span class="shop-item-price">9.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket('Frytki')">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
             </div>
         </div>
         <div class="shop-item">
@@ -38,7 +38,7 @@
             <img class="shop-item-image" src="Images/szarlotka.jpg">
             <div class="shop-item-details">
                 <span class="shop-item-price">23.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket('Szarlotka')" >DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)" >DODAJ DO KOSZYKA</button>
             </div>
         </div>
         <div class="shop-item">
@@ -46,7 +46,7 @@
             <img class="shop-item-image" src="Images/szejk.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">8.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket('Szejk waniliowy')">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
             </div>
         </div>
     </div>
@@ -71,51 +71,14 @@
 
     </div>
         <div id="addingPopUp">Produkt został dodany do koszyka</div>
-        <div id="getUserData" class="popup">
+        <div id="getUserData">
             <section class="container content-section">
                 <button class='toClose' onclick="closeTheForm()">x</button>
                 <div class="cart-row">
                     <span class="cart-toData cart-header cart-column">PODAJ SWOJE DANE, NA KTÓRE SKŁADASZ ZAMÓWIENIE</span>
                 </div>
-                <div id="dataContainer">
-                    <div class="input-container">
-                        <input type="text" required=""/>
-                        <label>IMIE</label>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" required=""/>
-                        <label>NAZWISKO</label>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" required=""/>
-                        <label>NR TELEFONU</label>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" required=""/>
-                        <label>NR REZERWACJI</label>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" required=""/>
-                        <label>ADRES</label>
-                    </div>
-                    <button class="btn btn-primary btn-purchase" type="button" onclick="goToPayment()">OK</button>
-                </div>
-            </div>
-            </section>
-        </div>
-
-
-        <div id="payments" class="popup">
-            <section class="container content-section">
-                <button class='toClose' onclick="closeThePaymentForm()">x</button>
-                <div class="cart-row">
-                    <span class="cart-toData cart-header cart-column">PODSUMOWANIE</span>
-                </div>
-                <div id="elementsOnTheRight">
-
-                </div>
-                </div>
-            </div>
+                <h1>IMIE:</h1>
+                <button class="btn btn-primary btn-purchase" type="button">OK</button>
             </section>
         </div>
     </div>

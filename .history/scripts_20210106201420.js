@@ -505,35 +505,12 @@ function goToPayment() {
   var element = document.getElementById('payments');
   element.appendChild(tag);
 
+  let tag = document.createElement('summaryPrice');
+  var text = document.createTextNode('Suma: ' + total.toFixed(2) + 'zł');
+  tag.appendChild(text);
+  var element = document.getElementById('payments');
+  element.appendChild(tag);
   console.log(productsComplex);
-
-  let tag2 = document.createElement('paymentMethodTitle');
-  var text2 = document.createTextNode('Wybierz metodę płatności:');
-  tag2.appendChild(text2);
-  var element2 = document.getElementById('elementsOnTheRight');
-  element2.appendChild(tag2);
-
-  var img = document.createElement('img');
-  img.src = 'Images/ing.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
-  img.style.marginTop = '10px';
-
-  var img = document.createElement('img');
-  img.src = 'Images/blik.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
-
-  var img = document.createElement('img');
-  img.src = 'Images/alior.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
 }
 
 let reservations = [];

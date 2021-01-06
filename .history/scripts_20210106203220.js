@@ -510,30 +510,22 @@ function goToPayment() {
   let tag2 = document.createElement('paymentMethodTitle');
   var text2 = document.createTextNode('Wybierz metodę płatności:');
   tag2.appendChild(text2);
-  var element2 = document.getElementById('elementsOnTheRight');
+  var element2 = document.getElementById('payments');
   element2.appendChild(tag2);
 
   var img = document.createElement('img');
   img.src = 'Images/ing.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
+  document.getElementById('payments').appendChild(img);
+
   img.style.width = '140px';
   img.style.height = '70px';
-  img.style.float = 'left';
-  img.style.marginTop = '10px';
-
   var img = document.createElement('img');
   img.src = 'Images/blik.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
+  document.getElementById('payments').appendChild(img);
 
   var img = document.createElement('img');
   img.src = 'Images/alior.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
+  document.getElementById('payments').appendChild(img);
 }
 
 let reservations = [];

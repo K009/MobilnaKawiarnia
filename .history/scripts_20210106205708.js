@@ -512,7 +512,6 @@ function goToPayment() {
   tag2.appendChild(text2);
   var element2 = document.getElementById('elementsOnTheRight');
   element2.appendChild(tag2);
-
   var img = document.createElement('img');
   img.src = 'Images/ing.png';
   document.getElementById('elementsOnTheRight').appendChild(img);

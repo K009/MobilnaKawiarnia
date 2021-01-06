@@ -30,7 +30,7 @@
             <img class="shop-item-image" src="Images/frytki.jpg">
             <div class="shop-item-details">
                 <span class="shop-item-price">9.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket('Frytki')">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
             </div>
         </div>
         <div class="shop-item">
@@ -38,7 +38,7 @@
             <img class="shop-item-image" src="Images/szarlotka.jpg">
             <div class="shop-item-details">
                 <span class="shop-item-price">23.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket('Szarlotka')" >DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)" >DODAJ DO KOSZYKA</button>
             </div>
         </div>
         <div class="shop-item">
@@ -46,7 +46,7 @@
             <img class="shop-item-image" src="Images/szejk.png">
             <div class="shop-item-details">
                 <span class="shop-item-price">8.99zł</span>
-                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket('Szejk waniliowy')">DODAJ DO KOSZYKA</button>
+                <button class="btn btn-primary shop-item-button" type="button" onclick="addToBasket(this.id)">DODAJ DO KOSZYKA</button>
             </div>
         </div>
     </div>
@@ -111,11 +111,14 @@
                 <div class="cart-row">
                     <span class="cart-toData cart-header cart-column">PODSUMOWANIE</span>
                 </div>
-                <div id="elementsOnTheRight">
-
+                <div class="cart-items">
                 </div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">Całość</strong>
+                    <span class="cart-total-price">0.0 zł</span>
                 </div>
-            </div>
+                <button class="btn btn-primary btn-purchase" type="button">ZAPŁAĆ</button>
+            </section>
             </section>
         </div>
     </div>

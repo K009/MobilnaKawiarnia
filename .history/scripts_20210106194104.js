@@ -238,223 +238,6 @@ function closeTheForm() {
 function closeThePaymentForm() {
   document.getElementById('payments').style.display = 'none';
 }
-
-function createProduct(productsInBasket, howMany) {
-  for (let i = 0; i < howMany; i++) {
-    let tag = document.createElement('summary');
-    // if (productsInBasket[i] === 'Frytki') {
-    //   console.log(productsInBasket[i]);
-    //   if (howMany === 3) {
-    //     console.log(productsComplex[productsComplex.length - 1]);
-    //     if (productsComplex[productsComplex.length - 1] === '9.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length - 1].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 2] === '9.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length - 2].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 3] === '9.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length - 3].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    //   if (howMany === 2) {
-    //     if (productsComplex[productsComplex.length] === '9.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 1] === '9.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    //   if (howMany === 1) {
-    //     if (productsComplex[productsComplex.length] === '9.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    // }
-    // if (productsInBasket[i] === 'Szarlotka') {
-    //   if (howMany === 3) {
-    //     if (productsComplex[productsComplex.length] === '23.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 1] === '23.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 2] === '23.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    //   if (howMany === 2) {
-    //     if (productsComplex[productsComplex.length] === '23.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 1] === '23.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    //   if (howMany === 1) {
-    //     if (productsComplex[productsComplex.length] === '23.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    // }
-    // if (productsInBasket[i] === 'Szejk waniliowy') {
-    //   if (howMany === 3) {
-    //     if (productsComplex[productsComplex.length] === '8.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 1] === '8.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 2] === '8.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    //   if (howMany === 2) {
-    //     if (productsComplex[productsComplex.length] === '8.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //     if (productsComplex[productsComplex.length - 1] === '8.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    //   if (howMany === 1) {
-    //     if (productsComplex[productsComplex.length] === '8.99zł') {
-    //       var text = document.createTextNode(
-    //         productsInBasket[i] +
-    //           ' x ' +
-    //           productsComplex[productsComplex.length].temp1
-    //       );
-    //       tag.appendChild(text);
-    //       var element = document.getElementById('payments');
-    //       element.appendChild(tag);
-    //     }
-    //   }
-    // }
-    var text = document.createTextNode(productsInBasket[i]);
-    tag.appendChild(text);
-    var element = document.getElementById('payments');
-    element.appendChild(tag);
-  }
-}
-
 function goToPayment() {
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
@@ -462,22 +245,20 @@ function goToPayment() {
 
   console.log(productsInBasket);
 
-  if (productsInBasket.length === 1) createProduct(productsInBasket, 1);
-  if (productsInBasket.length === 2) createProduct(productsInBasket, 2);
-  if (productsInBasket.length >= 3) createProduct(productsInBasket, 3);
-  // for (let i = 0; i < productsInBasket.length; i++) {
-  //   let tag = document.createElement('summary');
-  //   var text = document.createTextNode(productsInBasket[i]);
-  //   tag.appendChild(text);
-  //   var element = document.getElementById('payments');
-  //   element.appendChild(tag);
-  // }
+  for (let i = 0; i < productsInBasket.length; i++) {
+    if (i === 3) break;
+    let tag = document.createElement('summary');
+    var text = document.createTextNode(productsInBasket[i]);
+    tag.appendChild(text);
+    var element = document.getElementById('payments');
+    element.appendChild(tag);
+  }
 
   let total = 0,
     length = productsComplex.length;
 
   console.log(productsComplex);
-  if (productsInBasket.length >= 3) {
+  if (productsInBasket.length === 3) {
     total =
       productsComplex[length - 1].temp1 *
         parseFloat(productsComplex[length - 1].temp2) +
@@ -506,34 +287,6 @@ function goToPayment() {
   element.appendChild(tag);
 
   console.log(productsComplex);
-
-  let tag2 = document.createElement('paymentMethodTitle');
-  var text2 = document.createTextNode('Wybierz metodę płatności:');
-  tag2.appendChild(text2);
-  var element2 = document.getElementById('elementsOnTheRight');
-  element2.appendChild(tag2);
-
-  var img = document.createElement('img');
-  img.src = 'Images/ing.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
-  img.style.marginTop = '10px';
-
-  var img = document.createElement('img');
-  img.src = 'Images/blik.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
-
-  var img = document.createElement('img');
-  img.src = 'Images/alior.png';
-  document.getElementById('elementsOnTheRight').appendChild(img);
-  img.style.width = '140px';
-  img.style.height = '70px';
-  img.style.float = 'left';
 }
 
 let reservations = [];
