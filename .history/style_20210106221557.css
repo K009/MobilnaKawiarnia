@@ -612,10 +612,9 @@ description {
   font-family: 'Noto Sans', sans-serif;
   color: red;
   font-size: 20;
-  text-align: left;
   margin-left: 50;
   margin-top: 30;
-  width: 250px;
+  width: 200px;
   position: absolute;
   left: 0;
 }

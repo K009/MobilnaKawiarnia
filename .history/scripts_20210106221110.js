@@ -550,14 +550,6 @@ function displayDetails(nameOfProduct) {
   document.getElementById('elementsOnTheRight2').appendChild(img);
   img.style.height = '250px';
   img.style.float = 'left';
-
-  let tag = document.createElement('description');
-  var text = document.createTextNode(
-    'pokrojone w kształt słupków i smażone w głębokim tłuszczu ziemniaki albo inne warzywa, które są rzadziej stosowane. Podawane jako samodzielny posiłek typu fast food lub jako dodatek do potraw pieczonych lub smażonych, np. ryb.'
-  );
-  tag.appendChild(text);
-  var element = document.getElementById('detailedView');
-  element.appendChild(tag);
 }
 let reservations = [];
 

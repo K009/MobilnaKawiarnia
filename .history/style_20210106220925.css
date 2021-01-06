@@ -607,15 +607,3 @@ paymentMethodTitle {
 img:hover {
   opacity: 90%;
 }
-
-description {
-  font-family: 'Noto Sans', sans-serif;
-  color: red;
-  font-size: 20;
-  text-align: left;
-  margin-left: 50;
-  margin-top: 30;
-  width: 250px;
-  position: absolute;
-  left: 0;
-}

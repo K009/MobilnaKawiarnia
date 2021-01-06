@@ -514,12 +514,12 @@ function goToPayment() {
   let tag2 = document.createElement('paymentMethodTitle');
   var text2 = document.createTextNode('Wybierz metodę płatności:');
   tag2.appendChild(text2);
-  var element2 = document.getElementById('elementsOnTheRight1');
+  var element2 = document.getElementById('elementsOnTheRight');
   element2.appendChild(tag2);
 
   var img = document.createElement('img');
   img.src = 'Images/ing.png';
-  document.getElementById('elementsOnTheRight1').appendChild(img);
+  document.getElementById('elementsOnTheRight').appendChild(img);
   img.style.width = '140px';
   img.style.height = '70px';
   img.style.float = 'left';
@@ -527,14 +527,14 @@ function goToPayment() {
 
   var img = document.createElement('img');
   img.src = 'Images/blik.png';
-  document.getElementById('elementsOnTheRight1').appendChild(img);
+  document.getElementById('elementsOnTheRight').appendChild(img);
   img.style.width = '140px';
   img.style.height = '70px';
   img.style.float = 'left';
 
   var img = document.createElement('img');
   img.src = 'Images/alior.png';
-  document.getElementById('elementsOnTheRight1').appendChild(img);
+  document.getElementById('elementsOnTheRight').appendChild(img);
   img.style.width = '140px';
   img.style.height = '70px';
   img.style.float = 'left';
@@ -546,18 +546,11 @@ function displayDetails(nameOfProduct) {
   document.getElementById('productName').innerHTML = nameOfProduct;
 
   var img = document.createElement('img');
-  img.src = 'Images/' + nameOfProduct + '.jpg';
-  document.getElementById('elementsOnTheRight2').appendChild(img);
-  img.style.height = '250px';
+  img.src = 'Images/.png';
+  document.getElementById('elementsOnTheRight').appendChild(img);
+  img.style.width = '140px';
+  img.style.height = '70px';
   img.style.float = 'left';
-
-  let tag = document.createElement('description');
-  var text = document.createTextNode(
-    'pokrojone w kształt słupków i smażone w głębokim tłuszczu ziemniaki albo inne warzywa, które są rzadziej stosowane. Podawane jako samodzielny posiłek typu fast food lub jako dodatek do potraw pieczonych lub smażonych, np. ryb.'
-  );
-  tag.appendChild(text);
-  var element = document.getElementById('detailedView');
-  element.appendChild(tag);
 }
 let reservations = [];
 

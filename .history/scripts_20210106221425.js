@@ -551,7 +551,7 @@ function displayDetails(nameOfProduct) {
   img.style.height = '250px';
   img.style.float = 'left';
 
-  let tag = document.createElement('description');
+  let tag = document.createElement('summary');
   var text = document.createTextNode(
     'pokrojone w kształt słupków i smażone w głębokim tłuszczu ziemniaki albo inne warzywa, które są rzadziej stosowane. Podawane jako samodzielny posiłek typu fast food lub jako dodatek do potraw pieczonych lub smażonych, np. ryb.'
   );
