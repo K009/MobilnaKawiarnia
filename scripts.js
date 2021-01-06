@@ -1,5 +1,8 @@
 window.onload = function () {
   console.log((document.getElementById('demo').style.display = 'none'));
+  document.getElementById('chooseDate').textContent = getCurrentDate();
+  prepareReservations();
+  tableClicked(-1);
 };
 console.log(window);
 console.log('xxdd');
@@ -13,7 +16,6 @@ console.log('xxdd');
 let clickedTable = [-1, -1];
 let choosenDay = 0;
 let choosenHour = 0;
-
 
 
 // let reservations = [
@@ -32,11 +34,22 @@ let choosenHour = 0;
 // })
 
 
+function updateDateButton(day, month, year){
+  month = month+1;
+  document.getElementById('chooseDate').textContent = day+"/"+month+"/"+"2021";
+  updateTables(0, day%14);
+}
 
 
+function getCurrentDate(){
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
 
-
-
+  today = mm + '/' + dd + '/' + yyyy;
+  return today;
+}
 
 function submit(clicked_id) {
   console.log(clicked_id);
@@ -48,10 +61,8 @@ function choose() {
   //   document.getElementById('demo').style.display === 'block';
   // }
   if (document.getElementById('demo').style.display === 'block') {
-    console.log('pierwszy if');
     document.getElementById('demo').style.display = 'none';
   } else if (document.getElementById('demo').style.display === 'none') {
-    console.log('drugi if');
     document.getElementById('demo').style.display = 'block';
   }
 }
@@ -234,7 +245,77 @@ for (let i = 0; i < 8; i++){
       table2: "free",
       table3: "free",
       table4: "free",
-      table5: "reserved"
+      table5: "free"
+    }
+  }
+}
+
+function prepareReservations(){
+  for (let i = 0; i < 8; i++){
+    for (let j = 0; j < 14; j++){
+      let moduloHours = i % 3;
+      let moduloDays = j % 3;
+      
+      switch(moduloHours){
+
+        case 0:
+            switch(moduloDays){
+              case 0: 
+                reservations[i][j].table0 = "reserved";
+                reservations[i][j].table1 = "reserved";
+                break;
+            
+              case 1: 
+                reservations[i][j].table2 = "reserved";
+                reservations[i][j].table4 = "reserved";
+                break;
+
+              case 2: 
+                reservations[i][j].table3 = "reserved";
+                reservations[i][j].table4 = "reserved";
+                break;
+          }
+          break;
+
+        case 1:
+            switch(moduloDays){
+              case 0: 
+                reservations[i][j].table2 = "reserved";
+                reservations[i][j].table1 = "reserved";
+                break;
+            
+              case 1: 
+                reservations[i][j].table2 = "reserved";
+                reservations[i][j].table5 = "reserved";
+                break;
+
+              case 2: 
+                reservations[i][j].table3 = "reserved";
+                reservations[i][j].table0 = "reserved";
+                break;
+          }
+          break;
+
+          case 2:
+            switch(moduloDays){
+              case 0: 
+                reservations[i][j].table0 = "reserved";
+                reservations[i][j].table2 = "reserved";
+                break;
+            
+              case 1: 
+                reservations[i][j].table1 = "reserved";
+                reservations[i][j].table4 = "reserved";
+                break;
+
+              case 2: 
+                reservations[i][j].table5 = "reserved";
+                reservations[i][j].table2 = "reserved";
+                break;
+          }
+          break;
+
+      }
     }
   }
 }

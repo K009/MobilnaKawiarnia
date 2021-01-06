@@ -81,13 +81,17 @@
               calendar.on("selectionChange", function (ev) {
                   var newDate = ev.newSelection[0];
 
+                updateDateButton(newDate.getDate(), newDate.getMonth(), newDate.getYear());
+
                   Y.one("#selecteddate").setHTML(dtdate.format(newDate));
+                
+                choose();
               });
           });
           </script>
 
         <div id="bottomMenu">
-            <button id="chooseDate" onclick="choose()">12 październik 2020    13:00</button>
+            <button id="chooseDate" onclick="choose()"> </button>
         </div>
 
     </div>

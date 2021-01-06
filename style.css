@@ -31,7 +31,7 @@
   float: left;
 }
 .table {
-  fill: #90ee90;
+  fill: green;
 }
 .table:hover {
   fill: #88e388;
