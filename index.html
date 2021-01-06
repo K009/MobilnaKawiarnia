@@ -8,6 +8,10 @@
     <script src="http://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="main">
@@ -81,7 +85,7 @@
               calendar.on("selectionChange", function (ev) {
                   var newDate = ev.newSelection[0];
 
-                updateDateButton(newDate.getDate(), newDate.getMonth(), newDate.getYear());
+                updateDateButton(newDate.getDate(), newDate.getMonth());
 
                   Y.one("#selecteddate").setHTML(dtdate.format(newDate));
                 
@@ -93,6 +97,27 @@
         <div id="bottomMenu">
             <button id="chooseDate" onclick="choose()"> </button>
         </div>
+
+        <div id="bottomMenuHour">
+            <button id="chooseHour" onclick="chooseHour()">  </button>
+        </div>
+
+
+        <div class="dropup">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10:00</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">11:00</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">12:00</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">13:00</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">14:00</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">15:00</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">16:00</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">17:00</a></li>
+            </ul>
+          </div>
+        
 
     </div>
 

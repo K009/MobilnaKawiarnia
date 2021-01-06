@@ -1,8 +1,10 @@
 window.onload = function () {
   console.log((document.getElementById('demo').style.display = 'none'));
   document.getElementById('chooseDate').textContent = getCurrentDate();
+  document.getElementById('chooseHour').textContent = getCurrentHour();
   prepareReservations();
-  tableClicked(-1);
+  updateTables();
+  tableClicked();
 };
 console.log(window);
 console.log('xxdd');
@@ -16,6 +18,9 @@ console.log('xxdd');
 let clickedTable = [-1, -1];
 let choosenDay = 0;
 let choosenHour = 0;
+let dd = 0;
+let mm = 0;
+let hh = 0;
 
 
 // let reservations = [
@@ -34,21 +39,40 @@ let choosenHour = 0;
 // })
 
 
-function updateDateButton(day, month, year){
+function updateDateButton(day, month){
+  dd = day;
+  mm = month;
   month = month+1;
-  document.getElementById('chooseDate').textContent = day+"/"+month+"/"+"2021";
-  updateTables(0, day%14);
+  day = String(day).padStart(2, '0');
+  month = String(month).padStart(2, '0');
+  document.getElementById('chooseDate').textContent = day+"/"+month+"/2021";
+  updateTables();
 }
 
 
 function getCurrentDate(){
   var today = new Date();
-  var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  dd = String(today.getDate()).padStart(2, '0');
+  mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
 
-  today = mm + '/' + dd + '/' + yyyy;
+  today = dd + '/' + mm + '/' + yyyy;
   return today;
+}
+
+function getCurrentHour(){
+  var today = new Date();
+  var hour = today.getHours();
+  hh = hour;
+  if (hour < 23){
+    hour = hour + 1;
+  }
+  else {
+    hour = 00;
+  }
+  hour = String(hour).padStart(2, '0');
+  hour = hour + ":00";
+  return hour;
 }
 
 function submit(clicked_id) {
@@ -66,6 +90,11 @@ function choose() {
     document.getElementById('demo').style.display = 'block';
   }
 }
+
+function chooseHour(){
+}
+
+
 
 let productsInBasket = [];
 function addToBasket(clicked_id) {
@@ -321,7 +350,9 @@ function prepareReservations(){
 }
 
 
-function updateTables(hour, day){
+function updateTables(){
+  let hour = hh % 8;
+  let day = dd % 14;
   const tables = reservations[hour][day];
   let i = 0;
   console.log(tables);
@@ -337,13 +368,9 @@ function updateTables(hour, day){
   }
 }
 
-let k = 0;
 
 function tableClicked(id){
-  if (k == 0){
-    updateTables(0,0);
-    k = k + 1;
-  }
+
     if (document.getElementById(id).style.fill == "red"){
       return;
     }
