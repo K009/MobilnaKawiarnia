@@ -241,10 +241,8 @@ function closeThePaymentForm() {
 
 function closeDetailedView() {
   document.getElementById('detailedView').style.display = 'none';
-  if (document.getElementById('temporaryDiv'))
-    document.getElementById('temporaryDiv').remove();
-  if (document.getElementById('description'))
-    document.getElementById('description').remove();
+  if (document.getElementById('elementsOnTheRight2'))
+    document.getElementById('elementsOnTheRight2').remove();
 }
 
 function createProduct(productsInBasket, howMany) {
@@ -545,29 +543,24 @@ function goToPayment() {
 }
 
 let friesDescription =
-  'Pokrojone w kształt słupków i smażone w głębokim tłuszczu ziemniaki albo inne warzywa, które są rzadziej stosowane. Podawane jako samodzielny posiłek typu fast food lub jako dodatek do potraw pieczonych lub smażonych, np. ryb.';
+  'pokrojone w kształt słupków i smażone w głębokim tłuszczu ziemniaki albo inne warzywa, które są rzadziej stosowane. Podawane jako samodzielny posiłek typu fast food lub jako dodatek do potraw pieczonych lub smażonych, np. ryb.';
 let shakeDescription =
-  'Mleczny napój serwowany na zimno, często z dodatkiem lodów. Istnieje wiele jego wersji, o różnych smakach, m.in.: waniliowy, czekoladowy, truskawkowy, bananowy, kokosowy, pistacjowy, jagodowy itp. Wersją shakea bez mleka jest smoothie.';
+  'mleczny napój serwowany na zimno, często z dodatkiem lodów. Istnieje wiele jego wersji, o różnych smakach, m.in.: waniliowy, czekoladowy, truskawkowy, bananowy, kokosowy, pistacjowy, jagodowy itp. Wersją shakea bez mleka jest smoothie.';
 let applePieDescription =
-  'Pochodzący z Francji wyrób cukierniczy, wynalazek przypisywany Marie-Antoineowi Carêmeowi, składający się z półkruchego lub kruchego ciasta oraz owoców. Carême miał stworzyć ciasto o nazwie charlotte russe specjalnie dla cara Aleksandra I, swego wieloletniego pracodawcy.';
+  'pochodzący z Francji wyrób cukierniczy, wynalazek przypisywany Marie-Antoineowi Carêmeowi, składający się z półkruchego lub kruchego ciasta oraz owoców. Carême miał stworzyć ciasto o nazwie charlotte russe specjalnie dla cara Aleksandra I, swego wieloletniego pracodawcy.';
 
 function displayDetails(nameOfProduct) {
   console.log('here');
   document.getElementById('detailedView').style.display = 'block';
   document.getElementById('productName').innerHTML = nameOfProduct;
 
-  var temp = document.createElement('div');
-  temp.id = 'temporaryDiv';
-  document.getElementById('elementsOnTheRight2').appendChild(temp);
-
   var img = document.createElement('img');
   img.src = 'Images/' + nameOfProduct + '.jpg';
-  document.getElementById('temporaryDiv').appendChild(img);
+  document.getElementById('elementsOnTheRight2').appendChild(img);
   img.style.height = '250px';
   img.style.float = 'left';
 
-  let tag = document.createElement('div');
-  tag.id = 'description';
+  let tag = document.createElement('description');
   if (nameOfProduct === 'Frytki')
     var text = document.createTextNode(friesDescription);
   if (nameOfProduct === 'Szejk waniliowy')

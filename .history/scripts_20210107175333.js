@@ -243,8 +243,6 @@ function closeDetailedView() {
   document.getElementById('detailedView').style.display = 'none';
   if (document.getElementById('temporaryDiv'))
     document.getElementById('temporaryDiv').remove();
-  if (document.getElementById('description'))
-    document.getElementById('description').remove();
 }
 
 function createProduct(productsInBasket, howMany) {
@@ -566,8 +564,7 @@ function displayDetails(nameOfProduct) {
   img.style.height = '250px';
   img.style.float = 'left';
 
-  let tag = document.createElement('div');
-  tag.id = 'description';
+  let tag = document.createElement('description');
   if (nameOfProduct === 'Frytki')
     var text = document.createTextNode(friesDescription);
   if (nameOfProduct === 'Szejk waniliowy')

@@ -243,8 +243,6 @@ function closeDetailedView() {
   document.getElementById('detailedView').style.display = 'none';
   if (document.getElementById('temporaryDiv'))
     document.getElementById('temporaryDiv').remove();
-  if (document.getElementById('description'))
-    document.getElementById('description').remove();
 }
 
 function createProduct(productsInBasket, howMany) {
