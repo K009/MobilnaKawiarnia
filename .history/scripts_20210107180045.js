@@ -137,11 +137,10 @@ function ready() {
     .getElementsByClassName('btn-purchase')[0]
     .addEventListener('click', purchaseClicked);
 }
-let cartItemsGlobal;
+
 function purchaseClicked() {
   //alert('Thank you for your purchase');
   var cartItems = document.getElementsByClassName('cart-items')[0];
-  cartItemsGlobal = cartItems;
   console.log(document.getElementsByClassName('cart-items'));
   // while (cartItems.hasChildNodes()) {
   //   cartItems.removeChild(cartItems.firstChild);
@@ -207,7 +206,6 @@ function addItemToCart(title, price, imageSrc) {
 }
 
 let productsComplex = [];
-let endPrice;
 function updateCartTotal() {
   var cartItemContainer = document.getElementsByClassName('cart-items')[0];
   var cartRows = cartItemContainer.getElementsByClassName('cart-row');
@@ -229,8 +227,8 @@ function updateCartTotal() {
     total = total + price * quantity;
   }
   total = Math.round(total * 100) / 100;
-  endPrice = document.getElementsByClassName('cart-total-price')[0];
-  endPrice.innerText = total + 'zł';
+  document.getElementsByClassName('cart-total-price')[0].innerText =
+    total + 'zł';
 }
 
 function closeTheForm() {
@@ -239,19 +237,10 @@ function closeTheForm() {
 }
 function closeThePaymentForm() {
   document.getElementById('payments').style.display = 'none';
-  while (document.getElementById('summary'))
+  if (document.getElementById('summary'))
     document.getElementById('summary').remove();
-  while (document.getElementById('paymentImg'))
-    document.getElementById('paymentImg').remove();
   if (document.getElementById('summaryPrice'))
     document.getElementById('summaryPrice').remove();
-  if (document.getElementById('paymentMethodTitle'))
-    document.getElementById('paymentMethodTitle').remove();
-  while (cartItemsGlobal.hasChildNodes()) {
-    cartItemsGlobal.removeChild(cartItemsGlobal.firstChild);
-    endPrice.innerText = '0.0 zł';
-  }
-  productsInBasket = [];
 }
 
 function closeDetailedView() {
@@ -479,44 +468,7 @@ function createProduct(productsInBasket, howMany) {
   }
 }
 
-function validateForm() {
-  let name = document.getElementById('name').value,
-    surname = document.getElementById('surname').value,
-    phone_number = document.getElementById('phone_number').value,
-    reservation_number = document.getElementById('reservation_number').value,
-    address = document.getElementById('address').value;
-
-  console.log(name);
-  console.log(surname);
-  console.log(phone_number);
-  console.log(reservation_number);
-  console.log(address);
-
-  if (
-    name == null ||
-    name == '' ||
-    surname == null ||
-    surname == '' ||
-    phone_number == null ||
-    phone_number == '' ||
-    reservation_number == null ||
-    reservation_number == '' ||
-    address == null ||
-    address == ''
-  ) {
-    alert('Żadne pole nie może być puste ');
-    return false;
-  } else if (phone_number.length < 9) {
-    alert('Numer telefonu musi mieć conajmniej 9 znaków');
-    return false;
-  }
-  return true;
-}
-
 function goToPayment() {
-  if (!validateForm()) {
-    return;
-  }
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
   document.getElementById('payments').style.display = 'block';
@@ -569,8 +521,7 @@ function goToPayment() {
 
   console.log(productsComplex);
 
-  let tag2 = document.createElement('div');
-  tag2.id = 'paymentMethodTitle';
+  let tag2 = document.createElement('paymentMethodTitle');
   var text2 = document.createTextNode('Wybierz metodę płatności:');
   tag2.appendChild(text2);
   var element2 = document.getElementById('elementsOnTheRight1');
@@ -578,7 +529,6 @@ function goToPayment() {
 
   var img = document.createElement('img');
   img.src = 'Images/ing.png';
-  img.id = 'paymentImg';
   document.getElementById('elementsOnTheRight1').appendChild(img);
   img.style.width = '140px';
   img.style.height = '70px';
@@ -586,7 +536,6 @@ function goToPayment() {
   img.style.marginTop = '10px';
 
   var img = document.createElement('img');
-  img.id = 'paymentImg';
   img.src = 'Images/blik.png';
   document.getElementById('elementsOnTheRight1').appendChild(img);
   img.style.width = '140px';
@@ -594,7 +543,6 @@ function goToPayment() {
   img.style.float = 'left';
 
   var img = document.createElement('img');
-  img.id = 'paymentImg';
   img.src = 'Images/alior.png';
   document.getElementById('elementsOnTheRight1').appendChild(img);
   img.style.width = '140px';

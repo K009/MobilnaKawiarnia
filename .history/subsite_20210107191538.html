@@ -78,6 +78,7 @@
                     <span class="cart-toData cart-header cart-column">PODAJ SWOJE DANE, NA KTÓRE SKŁADASZ ZAMÓWIENIE</span>
                 </div>
                 <div id="dataContainer">
+                    <form name="myform" method="post" action="http://www.javatpoint.com/javascriptpages/valid.jsp" onsubmit="return validateform()" > 
                     <div class="input-container">
                         <input id="name" type="text" required=""/>
                         <label>IMIE</label>
@@ -98,6 +99,7 @@
                         <input id="address" type="text" required=""/>
                         <label>ADRES</label>
                     </div>
+                    </form>
                     <button class="btn btn-primary btn-purchase" type="button" onclick="goToPayment()">OK</button>
                 </div>
             </div>

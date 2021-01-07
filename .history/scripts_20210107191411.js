@@ -510,13 +510,10 @@ function validateForm() {
     alert('Numer telefonu musi mieć conajmniej 9 znaków');
     return false;
   }
-  return true;
 }
 
 function goToPayment() {
-  if (!validateForm()) {
-    return;
-  }
+  validateForm();
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
   document.getElementById('payments').style.display = 'block';

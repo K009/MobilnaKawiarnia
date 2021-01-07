@@ -515,7 +515,7 @@ function validateForm() {
 
 function goToPayment() {
   if (!validateForm()) {
-    return;
+    break;
   }
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';

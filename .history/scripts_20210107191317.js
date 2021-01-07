@@ -492,31 +492,17 @@ function validateForm() {
   console.log(reservation_number);
   console.log(address);
 
-  if (
-    name == null ||
-    name == '' ||
-    surname == null ||
-    surname == '' ||
-    phone_number == null ||
-    phone_number == '' ||
-    reservation_number == null ||
-    reservation_number == '' ||
-    address == null ||
-    address == ''
-  ) {
-    alert('Żadne pole nie może być puste ');
-    return false;
-  } else if (phone_number.length < 9) {
-    alert('Numer telefonu musi mieć conajmniej 9 znaków');
-    return false;
-  }
-  return true;
+  if (name==null || name=="" || surname==null || surname=="" || phone_number==null || phone_number=="" || reservation_number==null || reservation_number=="" ||){  
+    alert("Żadne pole nie może być puste ");  
+    return false;  
+  }else if(password.length<6){  
+    alert("Password must be at least 6 characters long.");  
+    return false;  
+    }  
 }
 
 function goToPayment() {
-  if (!validateForm()) {
-    return;
-  }
+  validateForm();
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
   document.getElementById('payments').style.display = 'block';

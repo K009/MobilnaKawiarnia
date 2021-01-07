@@ -506,17 +506,14 @@ function validateForm() {
   ) {
     alert('Żadne pole nie może być puste ');
     return false;
-  } else if (phone_number.length < 9) {
-    alert('Numer telefonu musi mieć conajmniej 9 znaków');
+  } else if (password.length < 6) {
+    alert('Password must be at least 6 characters long.');
     return false;
   }
-  return true;
 }
 
 function goToPayment() {
-  if (!validateForm()) {
-    return;
-  }
+  validateForm();
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
   document.getElementById('payments').style.display = 'block';

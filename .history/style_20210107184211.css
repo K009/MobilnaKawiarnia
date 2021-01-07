@@ -632,23 +632,22 @@ img:hover {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 10px;
   letter-spacing: 1.5px;
-  line-height: 30px;
+  line-height: 20px;
   outline: none;
   overflow: hidden;
   padding: 0px 0 0;
   position: absolute;
   text-transform: uppercase;
-  text-align: none;
-  top: 2%;
-  right: 0;
+  top: 3%;
+  transform: translate(-50%, -50%);
   transition: all 0.2s ease-in;
-  width: 60px;
+  width: 50px;
   z-index: 10000;
 }
 
 .toClose::before,
 .toClose::after {
-  background-color: #2d9cdb;
+  background-color: gray;
   content: '';
   display: block;
   height: 1px;
@@ -671,7 +670,7 @@ img:hover {
 }
 
 .toClose:hover {
-  color: white;
+  color: black;
 }
 
 .toClose:hover::before,

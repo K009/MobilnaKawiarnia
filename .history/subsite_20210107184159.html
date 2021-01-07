@@ -73,29 +73,29 @@
         <div id="addingPopUp">Produkt został dodany do koszyka</div>
         <div id="getUserData" class="popup">
             <section class="container content-section">
-                <button class='toClose' onclick="closeTheForm()">ZAMKNIJ</button>
+                <button class='toClose' onclick="closeTheForm()">x</button>
                 <div class="cart-row">
                     <span class="cart-toData cart-header cart-column">PODAJ SWOJE DANE, NA KTÓRE SKŁADASZ ZAMÓWIENIE</span>
                 </div>
                 <div id="dataContainer">
                     <div class="input-container">
-                        <input id="name" type="text" required=""/>
+                        <input type="text" required=""/>
                         <label>IMIE</label>
                     </div>
                     <div class="input-container">
-                        <input id="surname" type="text" required=""/>
+                        <input type="text" required=""/>
                         <label>NAZWISKO</label>
                     </div>
                     <div class="input-container">
-                        <input id="phone_number" type="text" required=""/>
+                        <input type="text" required=""/>
                         <label>NR TELEFONU</label>
                     </div>
                     <div class="input-container">
-                        <input id="reservation_number" type="text" required=""/>
+                        <input type="text" required=""/>
                         <label>NR REZERWACJI</label>
                     </div>
                     <div class="input-container">
-                        <input id="address" type="text" required=""/>
+                        <input type="text" required=""/>
                         <label>ADRES</label>
                     </div>
                     <button class="btn btn-primary btn-purchase" type="button" onclick="goToPayment()">OK</button>
@@ -107,7 +107,7 @@
 
         <div id="payments" class="popup">
             <section class="container content-section">
-                <button class='toClose' onclick="closeThePaymentForm()">ZAMKNIJ</button>
+                <button class='toClose' onclick="closeThePaymentForm()">x</button>
                 <div class="cart-row">
                     <span class="cart-toData cart-header cart-column">PODSUMOWANIE</span>
                 </div>
@@ -121,7 +121,7 @@
 
 
         <div id="detailedView" class="popup">
-            <button class='toClose' onclick="closeDetailedView()">ZAMKNIJ</button>
+            <button class='toClose' onclick="closeDetailedView()">Close</button>
             <section class="container content-section">
                 <div class="cart-row">
                     <span id="productName" class="cart-toData cart-header cart-column"></span>

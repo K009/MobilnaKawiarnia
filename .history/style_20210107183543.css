@@ -627,28 +627,27 @@ img:hover {
   background: none;
   border: 0;
   box-sizing: border-box;
-  color: transparent;
+  color: red;
   cursor: pointer;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px;
+  font-size: 18px;
+  left: 50%;
   letter-spacing: 1.5px;
-  line-height: 30px;
+  line-height: 90px;
   outline: none;
   overflow: hidden;
-  padding: 0px 0 0;
+  padding: 10px 0 0;
   position: absolute;
   text-transform: uppercase;
-  text-align: none;
-  top: 2%;
-  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
   transition: all 0.2s ease-in;
-  width: 60px;
-  z-index: 10000;
+  width: 100px;
 }
 
 .toClose::before,
 .toClose::after {
-  background-color: #2d9cdb;
+  background-color: black;
   content: '';
   display: block;
   height: 1px;
@@ -671,7 +670,7 @@ img:hover {
 }
 
 .toClose:hover {
-  color: white;
+  color: #8a2387;
 }
 
 .toClose:hover::before,
