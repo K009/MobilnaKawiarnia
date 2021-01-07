@@ -99,24 +99,23 @@
         </div>
 
         <div id="bottomMenuHour">
-            <button id="chooseHour" onclick="chooseHour()">  </button>
+            <!-- <button id="chooseHour" onclick="chooseHour()">  </button> -->
+            <div class="dropup">
+              <button id="chooseHour"  class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('10:00', 0)" href="#">10:00</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('11:00', 1)" href="#">11:00</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('12:00', 2)" href="#">12:00</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('13:00', 3)" href="#">13:00</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('14:00', 4)" href="#">14:00</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('15:00', 5)" href="#">15:00</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('16:00', 6)" href="#">16:00</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" onclick="hourClicked('17:00', 7)" href="#">17:00</a></li>
+              </ul>
+            </div>
         </div>
 
-
-        <div class="dropup">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10:00</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">11:00</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">12:00</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">13:00</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">14:00</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">15:00</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">16:00</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">17:00</a></li>
-            </ul>
-          </div>
         
 
     </div>

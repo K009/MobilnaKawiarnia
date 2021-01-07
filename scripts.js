@@ -1,7 +1,7 @@
 window.onload = function () {
   console.log((document.getElementById('demo').style.display = 'none'));
-  document.getElementById('chooseDate').textContent = getCurrentDate();
   document.getElementById('chooseHour').textContent = getCurrentHour();
+  document.getElementById('chooseDate').textContent = getCurrentDate();
   prepareReservations();
   updateTables();
   tableClicked();
@@ -21,6 +21,7 @@ let choosenHour = 0;
 let dd = 0;
 let mm = 0;
 let hh = 0;
+let isTodayOpen = true;
 
 
 // let reservations = [
@@ -52,7 +53,12 @@ function updateDateButton(day, month){
 
 function getCurrentDate(){
   var today = new Date();
-  dd = String(today.getDate()).padStart(2, '0');
+  if (!isTodayOpen){
+    dd = String(today.getDate()+1).padStart(2, '0');
+  }
+  else{
+    dd = String(today.getDate()).padStart(2, '0');
+  }
   mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
 
@@ -63,13 +69,12 @@ function getCurrentDate(){
 function getCurrentHour(){
   var today = new Date();
   var hour = today.getHours();
-  hh = hour;
-  if (hour < 23){
-    hour = hour + 1;
+  hour = hour + 1;
+  if (hour > 17 || hour < 10){
+    hour = 10;
+    isTodayOpen = false;
   }
-  else {
-    hour = 00;
-  }
+  hh = hour - 10;
   hour = String(hour).padStart(2, '0');
   hour = hour + ":00";
   return hour;
@@ -91,7 +96,10 @@ function choose() {
   }
 }
 
-function chooseHour(){
+function hourClicked(hour, id){
+  document.getElementById('chooseHour').textContent = hour;
+  hh = id;
+  updateTables();
 }
 
 
@@ -366,6 +374,7 @@ function updateTables(){
       i = i + 1;
     }
   }
+  console.log("Update tables: " + day + " " + hour);
 }
 
 
