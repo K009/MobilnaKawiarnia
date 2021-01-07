@@ -1,0 +1,5 @@
+1.Dodac usuwanie z koszyka i podsumowania po zamknieciu okna zaplac
+2.Dodac pop upa ze szczegółami dania
+3.Dodac ilosc poszczegolnych produktow w podsumowaniu
+4.Dodac ładne znaki x do zamykania
+5.Dodac walidacje danych do formularza

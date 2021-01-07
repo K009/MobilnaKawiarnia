@@ -124,6 +124,17 @@
   border: 2px dotted;
   display: none;
 }
+.popup {
+  background-color: white;
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 27%;
+  border: 2px dotted;
+  display: none;
+}
 .back {
   background-color: gainsboro;
   font-size: 26;
@@ -157,17 +168,31 @@
 .dishShape:hover {
   fill: #88e388;
 }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 #addingPopUp {
+  animation-name: fadeOut;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
   display: none;
+  opacity: 50%;
   border-radius: 5px;
   color: white;
   background-color: rgb(182, 176, 176);
   width: 600px;
-  height: 95;
+  height: 45;
   font-size: 32;
   position: absolute;
   text-align: center;
-  top: 20%;
+  top: 31%;
   left: 30%;
 }
 /** KOD**/
@@ -437,6 +462,9 @@ header a {
   width: 45%;
 }
 
+.cart-toData {
+  width: 100%;
+}
 .cart-price {
   width: 20%;
   font-size: 1.2em;
@@ -516,3 +544,174 @@ header a {
   font-size: 1.75em;
 }
 
+.input-data {
+  float: left;
+  margin-top: 8px;
+  margin-left: 5px;
+  border-radius: 15%;
+  border-width: 1;
+}
+
+h2 {
+  float: left;
+}
+
+#dataContainer {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
+
+.input-container {
+  font-family: 'Noto Sans', sans-serif;
+  position: relative;
+  margin-bottom: 25px;
+}
+.input-container label {
+  font-family: 'Noto Sans', sans-serif;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 16px;
+  color: black;
+  pointer-event: none;
+  transition: all 0.5s ease-in-out;
+}
+.input-container input {
+  font-family: 'Noto Sans', sans-serif;
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 16px;
+  color: black;
+}
+.input-container input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e74c3c;
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+  top: -12px;
+  font-size: 12px;
+}
+
+#summary {
+  font-family: 'Noto Sans', sans-serif;
+  color: #2d9cdb;
+  text-align: left;
+  font-size: 20;
+  margin-left: 50;
+  margin-top: 30;
+}
+
+#summaryPrice {
+  font-family: 'Noto Sans', sans-serif;
+  color: black;
+  font-size: 20;
+  position: absolute;
+  bottom: 200;
+  left: 50;
+}
+
+imga {
+  width: 70px;
+  height: 30px;
+}
+
+#paymentMethodTitle {
+  font-family: 'Noto Sans', sans-serif;
+  color: black;
+  font-size: 20;
+}
+.elementsOnTheRight {
+  font-family: 'Noto Sans', sans-serif;
+  color: black;
+  font-size: 20;
+  background-color: #fff;
+  width: 250;
+  height: 250;
+  position: absolute;
+  right: 50;
+  margin-top: 25;
+}
+
+img:hover {
+  opacity: 90%;
+}
+
+#description {
+  font-family: 'Noto Sans', sans-serif;
+  color: black;
+  background-color: #95d1f3;
+  border-radius: 5%;
+  padding: 20;
+  font-size: 20;
+  text-align: left;
+  margin-left: 50;
+  margin-top: 30;
+  width: 270px;
+  position: absolute;
+  left: 0;
+}
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+.toClose {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  color: transparent;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  line-height: 30px;
+  outline: none;
+  overflow: hidden;
+  padding: 0px 0 0;
+  position: absolute;
+  text-transform: uppercase;
+  text-align: none;
+  top: 2%;
+  right: 0;
+  transition: all 0.2s ease-in;
+  width: 60px;
+  z-index: 10000;
+}
+
+.toClose::before,
+.toClose::after {
+  background-color: #2d9cdb;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform-origin: center left;
+  transition: all 0.2s ease-in;
+  width: 141.4214px;
+  z-index: -1;
+}
+
+.toClose::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.toClose::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.toClose:hover {
+  color: white;
+}
+
+.toClose:hover::before,
+.toClose:hover::after {
+  height: 50px;
+  transform: rotate(0deg);
+}
