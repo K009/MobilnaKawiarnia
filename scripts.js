@@ -48,6 +48,8 @@ function updateDateButton(day, month){
   day = String(day).padStart(2, '0');
   month = String(month).padStart(2, '0');
   document.getElementById('chooseDate').textContent = day+"/"+month+"/2021";
+  clickedTable[0] = -1;
+  clickedTable[1] = -1;
   updateTables();
 }
 
@@ -67,7 +69,7 @@ function getCurrentDate(){
   mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
 
-  today = dd + '/' + mm + '/' + yyyy;
+  today = day + '/' + mm + '/' + yyyy;
   return today;
 }
 
@@ -102,6 +104,8 @@ function choose() {
 function hourClicked(hour, id){
   document.getElementById('chooseHour').textContent = hour;
   hh = id;
+  clickedTable[0] = -1;
+  clickedTable[1] = -1;
   updateTables();
 }
 
@@ -789,10 +793,10 @@ function updateTables(){
   let i = 0;
   for (const table in tables){
     if (tables[table] == "free"){
-      document.getElementById(i).style.fill = "green";
+      document.getElementById(i).style.fill = "rgb(125, 185, 125)";
       i = i + 1;
     } else if (tables[table] == 'reserved') {
-      document.getElementById(i).style.fill = 'red';
+      document.getElementById(i).style.fill = 'rgb(179, 36, 0)';
       i = i + 1;
     }
   }
@@ -800,23 +804,25 @@ function updateTables(){
 }
 
 function submit() {
+  let hour = hh % 8;
+  let day = dd % 14;
   if(clickedTable[0] == 0 || clickedTable[1] == 0){
-    reservations[hh][dd].table0 = "reserved";
+    reservations[hour][day].table0 = "reserved";
   }
   if(clickedTable[0] == 1 || clickedTable[1] == 1){
-    reservations[hh][dd].table1 = "reserved";
+    reservations[hour][day].table1 = "reserved";
   }  
   if(clickedTable[0] == 2 || clickedTable[1] == 2){
-    reservations[hh][dd].table2 = "reserved";
+    reservations[hour][day].table2 = "reserved";
   }  
   if(clickedTable[0] == 3 || clickedTable[1] == 3){
-    reservations[hh][dd].table3 = "reserved";
+    reservations[hour][day].table3 = "reserved";
   }  
   if(clickedTable[0] == 4 || clickedTable[1] == 4){
-    reservations[hh][dd].table4 = "reserved";
+    reservations[hour][day].table4 = "reserved";
   }  
   if(clickedTable[0] == 5 || clickedTable[1] == 5){
-    reservations[hh][dd].table5 = "reserved";
+    reservations[hour][day].table5 = "reserved";
   }  
 
   clickedTable[0] = -1;
@@ -827,22 +833,22 @@ function submit() {
 
 function tableClicked(id){
 
-    if (document.getElementById(id).style.fill == "red"){
+    if (document.getElementById(id).style.fill == "rgb(179, 36, 0)"){
       return;
     }
 
-  if (document.getElementById(id).style.fill == 'green') {
+  if (document.getElementById(id).style.fill == 'rgb(125, 185, 125)') {
     if (!addClickedTable(id)) {
       console.log('False');
       return;
     }
-    document.getElementById(id).style.fill = 'orange';
+    document.getElementById(id).style.fill = 'rgb(255, 166, 77)';
     return;
   }
 
-  if (document.getElementById(id).style.fill == 'orange') {
+  if (document.getElementById(id).style.fill == 'rgb(255, 166, 77)') {
     removeClickedTable(id);
-    document.getElementById(id).style.fill = 'green';
+    document.getElementById(id).style.fill = 'rgb(125, 185, 125)';
     return;
   }
 }

@@ -31,10 +31,10 @@
   float: left;
 }
 .table {
-  fill: green;
+  fill: rgb(125, 185, 125);
 }
 .table:hover {
-  fill: #88e388;
+  fill: #6d9e6d;
 }
 #bottomButton {
   background-color: gainsboro;

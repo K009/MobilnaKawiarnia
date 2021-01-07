@@ -3,3 +3,9 @@
 3.Dodac ilosc poszczegolnych produktow w podsumowaniu
 4.Dodac ładne znaki x do zamykania - DONE
 5.Dodac walidacje danych do formularza - WSTEPNIE DONE
+
+
+6.Zerować wybrany stolik po zmianie dnia/godziny - DONE
+7.Gdzieś popsuła się zmiana koloru stolików po najechaniu
+8.Po kliknięciu "Zarezerwuj" - popup do wypełnienia
+9.Ewentualnie (jak zdążymy) - zrobić kalendarz tylko na dwa tygodnie
