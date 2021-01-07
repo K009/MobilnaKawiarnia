@@ -2,6 +2,7 @@ window.onload = function () {
   console.log((document.getElementById('demo').style.display = 'none'));
   document.getElementById('chooseHour').textContent = getCurrentHour();
   document.getElementById('chooseDate').textContent = getCurrentDate();
+  document.getElementById('submitDate').disabled = true;
   prepareReservations();
   updateTables();
   tableClicked();
@@ -407,10 +408,12 @@ function addClickedTable(id){
   }
   if (clickedTable[0] == -1){
     clickedTable[0] = id;
+    document.getElementById('submitDate').disabled = false;
     return true;
   }
   if (clickedTable[1] == -1){
     clickedTable[1] = id;
+    document.getElementById('submitDate').disabled = false;
     return true;
   }
 }
@@ -421,5 +424,9 @@ function removeClickedTable(id){
   }
   if (clickedTable[1] == id){
     clickedTable[1] = -1;
+  }
+  if(clickedTable[0] == -1 && clickedTable[1] == -1){
+    document.getElementById('submitDate').disabled = true;
+
   }
 }
