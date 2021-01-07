@@ -54,12 +54,16 @@ function updateDateButton(day, month){
 
 function getCurrentDate(){
   var today = new Date();
+  let day;
   if (!isTodayOpen){
-    dd = String(today.getDate()+1).padStart(2, '0');
+    dd = today.getDate()+1;
+    day = String(today.getDate()+1).padStart(2, '0');
   }
   else{
-    dd = String(today.getDate()).padStart(2, '0');
+    dd = today.getDate();
+    day = String(today.getDate()).padStart(2, '0');
   }
+
   mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
 
@@ -81,9 +85,7 @@ function getCurrentHour(){
   return hour;
 }
 
-function submit(clicked_id) {
-  console.log(clicked_id);
-}
+
 // $('#demo').hide();
 console.log(document.getElementById('demo'));
 function choose() {
@@ -272,7 +274,7 @@ function updateCartTotal() {
 }
 
 
-let reservations = []
+let reservations = [];
 
 for (let i = 0; i < 8; i++){
   reservations[i] = [];
@@ -293,7 +295,6 @@ function prepareReservations(){
     for (let j = 0; j < 14; j++){
       let moduloHours = i % 3;
       let moduloDays = j % 3;
-      
       switch(moduloHours){
 
         case 0:
@@ -364,7 +365,6 @@ function updateTables(){
   let day = dd % 14;
   const tables = reservations[hour][day];
   let i = 0;
-  console.log(tables);
   for (const table in tables){
     if (tables[table] == "free"){
       document.getElementById(i).style.fill = "green";
@@ -376,6 +376,31 @@ function updateTables(){
     }
   }
   console.log("Update tables: " + day + " " + hour);
+}
+
+function submit() {
+  if(clickedTable[0] == 0 || clickedTable[1] == 0){
+    reservations[hh][dd].table0 = "reserved";
+  }
+  if(clickedTable[0] == 1 || clickedTable[1] == 1){
+    reservations[hh][dd].table1 = "reserved";
+  }  
+  if(clickedTable[0] == 2 || clickedTable[1] == 2){
+    reservations[hh][dd].table2 = "reserved";
+  }  
+  if(clickedTable[0] == 3 || clickedTable[1] == 3){
+    reservations[hh][dd].table3 = "reserved";
+  }  
+  if(clickedTable[0] == 4 || clickedTable[1] == 4){
+    reservations[hh][dd].table4 = "reserved";
+  }  
+  if(clickedTable[0] == 5 || clickedTable[1] == 5){
+    reservations[hh][dd].table5 = "reserved";
+  }  
+
+  clickedTable[0] = -1;
+  clickedTable[1] = -1;
+  updateTables();
 }
 
 
