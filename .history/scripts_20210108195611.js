@@ -358,8 +358,12 @@ function createProduct(productsInBasket, howMany) {
     }
   }
 
+  console.log('ILOSC:!:!');
+  console.log(applePieQuantity);
+  console.log(friesQuantity);
+  console.log(shakeQuantity);
   for (let i = 0; i < howMany; i++) {
-    if (productsInBasket[i] === 'Frytki') {
+    if (productsInBasket === 'Frytki') {
       let tag = document.createElement('div');
       tag.id = 'summary';
       var text = document.createTextNode(
@@ -369,7 +373,7 @@ function createProduct(productsInBasket, howMany) {
       var element = document.getElementById('payments');
       element.appendChild(tag);
     }
-    if (productsInBasket[i] === 'Szarlotka') {
+    if (productsInBasket === 'Szarlotka') {
       let tag = document.createElement('div');
       tag.id = 'summary';
       var text = document.createTextNode(
@@ -379,7 +383,7 @@ function createProduct(productsInBasket, howMany) {
       var element = document.getElementById('payments');
       element.appendChild(tag);
     }
-    if (productsInBasket[i] === 'Szejk waniliowy') {
+    if (productsInBasket === 'Szejk waniliowy') {
       let tag = document.createElement('div');
       tag.id = 'summary';
       var text = document.createTextNode(
@@ -427,9 +431,9 @@ function validateForm() {
 }
 
 function goToPayment() {
-  if (!validateForm()) {
-    return;
-  }
+  // if (!validateForm()) {
+  //   return;
+  // }
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
   document.getElementById('payments').style.display = 'block';

@@ -322,73 +322,237 @@ function closeDetailedView() {
 }
 
 function createProduct(productsInBasket, howMany) {
-  let friesQuantity = 0,
-    applePieQuantity = 0,
-    shakeQuantity = 0,
-    length = productsComplex.length;
-
-  if (productsComplex[length - 1].temp2 === '23.99zł') {
-    applePieQuantity = productsComplex[length - 1].temp1;
-    if (productsComplex[length - 2].temp2 === '8.99zł') {
-      shakeQuantity = productsComplex[length - 2].temp1;
-      friesQuantity = productsComplex[length - 3].temp1;
-    } else {
-      shakeQuantity = productsComplex[length - 3].temp1;
-      friesQuantity = productsComplex[length - 2].temp1;
-    }
-  }
-  if (productsComplex[length - 1].temp2 === '8.99zł') {
-    shakeQuantity = productsComplex[length - 1].temp1;
-    if (productsComplex[length - 2].temp2 === '23.99zł') {
-      applePieQuantity = productsComplex[length - 2].temp1;
-      friesQuantity = productsComplex[length - 3].temp1;
-    } else {
-      friesQuantity = productsComplex[length - 3].temp1;
-      applePieQuantity = productsComplex[length - 2].temp1;
-    }
-  }
-  if (productsComplex[length - 1].temp2 === '9.99zł') {
-    friesQuantity = productsComplex[length - 1].temp1;
-    if (productsComplex[length - 2].temp2 === '23.99zł') {
-      applePieQuantity = productsComplex[length - 2].temp1;
-      shakeQuantity = productsComplex[length - 3].temp1;
-    } else {
-      shakeQuantity = productsComplex[length - 3].temp1;
-      applePieQuantity = productsComplex[length - 2].temp1;
-    }
-  }
-
   for (let i = 0; i < howMany; i++) {
-    if (productsInBasket[i] === 'Frytki') {
-      let tag = document.createElement('div');
-      tag.id = 'summary';
-      var text = document.createTextNode(
-        productsInBasket[i] + ' x ' + friesQuantity
-      );
-      tag.appendChild(text);
-      var element = document.getElementById('payments');
-      element.appendChild(tag);
-    }
-    if (productsInBasket[i] === 'Szarlotka') {
-      let tag = document.createElement('div');
-      tag.id = 'summary';
-      var text = document.createTextNode(
-        productsInBasket[i] + ' x ' + applePieQuantity
-      );
-      tag.appendChild(text);
-      var element = document.getElementById('payments');
-      element.appendChild(tag);
-    }
-    if (productsInBasket[i] === 'Szejk waniliowy') {
-      let tag = document.createElement('div');
-      tag.id = 'summary';
-      var text = document.createTextNode(
-        productsInBasket[i] + ' x ' + shakeQuantity
-      );
-      tag.appendChild(text);
-      var element = document.getElementById('payments');
-      element.appendChild(tag);
-    }
+    let tag = document.createElement('div');
+    tag.id = 'summary';
+    // if (productsInBasket[i] === 'Frytki') {
+    //   console.log(productsInBasket[i]);
+    //   if (howMany === 3) {
+    //     console.log(productsComplex[productsComplex.length - 1]);
+    //     if (productsComplex[productsComplex.length - 1] === '9.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length - 1].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 2] === '9.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length - 2].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 3] === '9.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length - 3].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    //   if (howMany === 2) {
+    //     if (productsComplex[productsComplex.length] === '9.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 1] === '9.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    //   if (howMany === 1) {
+    //     if (productsComplex[productsComplex.length] === '9.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    // }
+    // if (productsInBasket[i] === 'Szarlotka') {
+    //   if (howMany === 3) {
+    //     if (productsComplex[productsComplex.length] === '23.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 1] === '23.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 2] === '23.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    //   if (howMany === 2) {
+    //     if (productsComplex[productsComplex.length] === '23.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 1] === '23.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    //   if (howMany === 1) {
+    //     if (productsComplex[productsComplex.length] === '23.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    // }
+    // if (productsInBasket[i] === 'Szejk waniliowy') {
+    //   if (howMany === 3) {
+    //     if (productsComplex[productsComplex.length] === '8.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 1] === '8.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 2] === '8.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    //   if (howMany === 2) {
+    //     if (productsComplex[productsComplex.length] === '8.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //     if (productsComplex[productsComplex.length - 1] === '8.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    //   if (howMany === 1) {
+    //     if (productsComplex[productsComplex.length] === '8.99zł') {
+    //       var text = document.createTextNode(
+    //         productsInBasket[i] +
+    //           ' x ' +
+    //           productsComplex[productsComplex.length].temp1
+    //       );
+    //       tag.appendChild(text);
+    //       var element = document.getElementById('payments');
+    //       element.appendChild(tag);
+    //     }
+    //   }
+    // }
+    var text = document.createTextNode(productsInBasket[i]);
+    tag.appendChild(text);
+    var element = document.getElementById('payments');
+    element.appendChild(tag);
+
+    console.log(productsComplex);
+    let friesQuantity = 0,
+      applePieQuantity = 0,
+      shakeQuantity = 0,
+      length = productsComplex.length;
+    if (productsComplex[length - 1].temp2 === '23.99zł')
+      applePieQuantity = productsComplex[length - 1].temp1;
+    console.log(applePieQuantity);
+    // if (productsInBasket.length >= 3) {
+    //   total =
+    //     productsComplex[length - 1].temp1 *
+    //       parseFloat(productsComplex[length - 1].temp2) +
+    //     productsComplex[length - 2].temp1 *
+    //       parseFloat(productsComplex[length - 2].temp2) +
+    //     productsComplex[length - 3].temp1 *
+    //       parseFloat(productsComplex[length - 3].temp2);
+    // }
   }
 }
 
@@ -427,9 +591,9 @@ function validateForm() {
 }
 
 function goToPayment() {
-  if (!validateForm()) {
-    return;
-  }
+  // if (!validateForm()) {
+  //   return;
+  // }
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
   document.getElementById('payments').style.display = 'block';

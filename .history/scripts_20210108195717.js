@@ -358,6 +358,10 @@ function createProduct(productsInBasket, howMany) {
     }
   }
 
+  console.log('ILOSC:!:!');
+  console.log(applePieQuantity);
+  console.log(friesQuantity);
+  console.log(shakeQuantity);
   for (let i = 0; i < howMany; i++) {
     if (productsInBasket[i] === 'Frytki') {
       let tag = document.createElement('div');
@@ -427,9 +431,9 @@ function validateForm() {
 }
 
 function goToPayment() {
-  if (!validateForm()) {
-    return;
-  }
+  // if (!validateForm()) {
+  //   return;
+  // }
   console.log('DOTARLES TU ');
   document.getElementById('getUserData').style.display = 'none';
   document.getElementById('payments').style.display = 'block';

@@ -132,7 +132,7 @@
   top: 50%;
   left: 27%;
   border: 2px dotted;
-  display: none;
+  display: block;
 }
 .back {
   background-color: gainsboro;
