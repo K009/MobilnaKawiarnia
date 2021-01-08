@@ -301,6 +301,15 @@ function closeTheForm() {
   console.log('xxx');
   document.getElementById('getUserData').style.display = 'none';
 }
+
+function closeTheFormReservation() {
+  document.getElementById('getUserDataForReservation').style.display = 'none';
+}
+
+function closeTheFormShowReservationNumber(){
+  document.getElementById('showReservationNumber').style.display = 'none';
+}
+
 function closeThePaymentForm() {
   document.getElementById('payments').style.display = 'none';
   while (document.getElementById('summary'))
@@ -578,6 +587,27 @@ function validateForm() {
   return true;
 }
 
+function validateFormForReservation(){
+  let name = document.getElementById('name').value,
+  surname = document.getElementById('surname').value,
+  phone_number = document.getElementById('phone_number').value;
+  if (
+    name == null ||
+    name == '' ||
+    surname == null ||
+    surname == '' ||
+    phone_number == null ||
+    phone_number == '' 
+  ) {
+    alert('Żadne pole nie może być puste ');
+    return false;
+  } else if (phone_number.length < 9) {
+    alert('Numer telefonu musi mieć conajmniej 9 znaków');
+    return false;
+  }
+  return true;
+}
+
 function goToPayment() {
   if (!validateForm()) {
     return;
@@ -804,30 +834,39 @@ function updateTables(){
 }
 
 function submit() {
-  let hour = hh % 8;
-  let day = dd % 14;
-  if(clickedTable[0] == 0 || clickedTable[1] == 0){
-    reservations[hour][day].table0 = "reserved";
-  }
-  if(clickedTable[0] == 1 || clickedTable[1] == 1){
-    reservations[hour][day].table1 = "reserved";
-  }  
-  if(clickedTable[0] == 2 || clickedTable[1] == 2){
-    reservations[hour][day].table2 = "reserved";
-  }  
-  if(clickedTable[0] == 3 || clickedTable[1] == 3){
-    reservations[hour][day].table3 = "reserved";
-  }  
-  if(clickedTable[0] == 4 || clickedTable[1] == 4){
-    reservations[hour][day].table4 = "reserved";
-  }  
-  if(clickedTable[0] == 5 || clickedTable[1] == 5){
-    reservations[hour][day].table5 = "reserved";
-  }  
+  document.getElementById('getUserDataForReservation').style.display = 'block';
+  // let hour = hh % 8;
+  // let day = dd % 14;
+  // if(clickedTable[0] == 0 || clickedTable[1] == 0){
+  //   reservations[hour][day].table0 = "reserved";
+  // }
+  // if(clickedTable[0] == 1 || clickedTable[1] == 1){
+  //   reservations[hour][day].table1 = "reserved";
+  // }  
+  // if(clickedTable[0] == 2 || clickedTable[1] == 2){
+  //   reservations[hour][day].table2 = "reserved";
+  // }  
+  // if(clickedTable[0] == 3 || clickedTable[1] == 3){
+  //   reservations[hour][day].table3 = "reserved";
+  // }  
+  // if(clickedTable[0] == 4 || clickedTable[1] == 4){
+  //   reservations[hour][day].table4 = "reserved";
+  // }  
+  // if(clickedTable[0] == 5 || clickedTable[1] == 5){
+  //   reservations[hour][day].table5 = "reserved";
+  // }  
 
-  clickedTable[0] = -1;
-  clickedTable[1] = -1;
-  updateTables();
+  // clickedTable[0] = -1;
+  // clickedTable[1] = -1;
+  // updateTables();
+}
+
+function printReservationNumber(){
+  if (!validateFormForReservation()){
+    return;
+  }
+  document.getElementById('getUserDataForReservation').style.display = 'none';
+  document.getElementById('showReservationNumber').style.display = 'block';
 }
 
 

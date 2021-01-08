@@ -120,6 +120,42 @@
             </div>
         </div>
 
+        <div id="getUserDataForReservation" class="popup">
+          <section class="container content-section">
+              <button class='toClose' onclick="closeTheFormReservation()">ZAMKNIJ</button>
+              <div class="cart-row">
+                  <span class="cart-toData cart-header cart-column">PODAJ DANE DO REZERWACJI</span>
+              </div>
+              <div id="dataContainer">
+                  <div class="input-container">
+                      <input id="name" type="text" required=""/>
+                      <label>IMIE</label>
+                  </div>
+                  <div class="input-container">
+                      <input id="surname" type="text" required=""/>
+                      <label>NAZWISKO</label>
+                  </div>
+                  <div class="input-container">
+                      <input id="phone_number" type="text" required=""/>
+                      <label>NR TELEFONU</label>
+                  <button class="btn btn-primary btn-purchase" type="button" onclick="printReservationNumber()">OK</button>
+              </div>
+          </div>
+          </section>
+      </div>
+
+
+      <div id="showReservationNumber" class="popup">
+        <section class="container content-section">
+            <button class='toClose' onclick="closeTheFormShowReservationNumber()">ZAMKNIJ</button>
+            <div class="cart-row">
+                <span class="cart-toData cart-header cart-column">PODSUMOWANIE ZAMÓWIENIA</span>
+            </div>
+              <p>Stolik został zarezerwowany</p>
+                <button class="btn btn-primary btn-purchase" type="button" onclick="closeTheFormShowReservationNumber()">OK</button>
+        </div>
+        </section>
+    </div>
         
 
     </div>
