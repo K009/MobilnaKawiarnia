@@ -435,7 +435,7 @@ function validateForm() {
       (address == null || address == '') &&
       (reservation_number != null || reservation_number != ''))
   ) {
-    alert('Uzupełnij brakujące pola');
+    alert('Żadne pole nie może być puste');
     return false;
   } else if (phone_number.length < 9) {
     alert('Numer telefonu musi mieć conajmniej 9 znaków');

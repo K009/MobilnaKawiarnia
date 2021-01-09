@@ -430,12 +430,12 @@ function validateForm() {
     surname == '' ||
     phone_number == null ||
     phone_number == '' ||
-    ((reservation_number == null || reservation_number == '') &&
-      (address != null || address != '') &&
-      (address == null || address == '') &&
-      (reservation_number != null || reservation_number != ''))
+    reservation_number == null ||
+    reservation_number == '' ||
+    address == null ||
+    address == ''
   ) {
-    alert('Uzupełnij brakujące pola');
+    alert('Żadne pole nie może być puste');
     return false;
   } else if (phone_number.length < 9) {
     alert('Numer telefonu musi mieć conajmniej 9 znaków');
