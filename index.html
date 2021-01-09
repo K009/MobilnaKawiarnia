@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
@@ -119,6 +119,48 @@
               </ul>
             </div>
         </div>
+
+        <div id="getUserDataForReservation" class="popup">
+          <section class="container content-section">
+              <button class='toClose' onclick="closeTheFormReservation()">ZAMKNIJ</button>
+              <div class="cart-row">
+                  <span class="cart-toData cart-header cart-column">PODAJ DANE DO REZERWACJI</span>
+              </div>
+              <div id="dataContainer">
+                  <div class="input-container">
+                      <input id="name" type="text" required=""/>
+                      <label>IMIE</label>
+                  </div>
+                  <div class="input-container">
+                      <input id="surname" type="text" required=""/>
+                      <label>NAZWISKO</label>
+                  </div>
+                  <div class="input-container">
+                      <input id="phone_number" type="text" required=""/>
+                      <label>NR TELEFONU</label>
+                  <button class="btn btn-primary btn-purchase" type="button" onclick="printReservationNumber()">OK</button>
+              </div>
+          </div>
+          </section>
+      </div>
+
+
+      <div id="showReservationNumber" class="popup">
+        <section class="container content-section">
+            <button class='toClose' onclick="closeTheFormShowReservationNumber()">ZAMKNIJ</button>
+            <div class="cart-row">
+                <span class="cart-toData cart-header cart-column">PODSUMOWANIE REZERWACJI</span>
+            </div>
+              <h3>Stolik został zarezerwowany</h3>
+              <h3 id="submit-message"></h3>
+              <h3 id="sumbit-message2"></h3>
+              <h4>Jeżeli chcesz, możesz zamówić dania na wybraną godzinę. W tym celu udaj się do sekcji ZAMÓW.</h4>
+              <h4>UWAGA - przy składaniu zamówienia zostaniesz poproszony o podanie numeru rezerwacji.</h4>
+                <button class="btn btn-primary btn-purchase" type="button" onclick="closeTheFormShowReservationNumber()">OK</button>
+        </div>
+        </section>
+    </div>
+        
 
     </div>
 
