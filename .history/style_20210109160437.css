@@ -117,23 +117,21 @@
   width: 700px;
   height: 500px;
   position: absolute;
+  text-align: center;
   top: 20%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 27%;
   border: 2px solid;
   border-color: black;
   display: none;
 }
 .popup {
   background-color: white;
-  width: 700px;
+  width: 50%;
   height: 500px;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  text-align: center;
+  top: 50%;
+  margin: auto;
   border: 2px solid;
-  border-color: black;
   display: none;
 }
 .back {
