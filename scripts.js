@@ -17,8 +17,9 @@ console.log('xxdd');
 // };
 
 let clickedTable = [-1, -1];
-let choosenDay = 0;
-let choosenHour = 0;
+let chosenDay = 0;
+let chosenHour = 0;
+let chosenMonth = 0;
 let dd = 0;
 let mm = 0;
 let hh = 0;
@@ -47,6 +48,8 @@ function updateDateButton(day, month){
   month = month+1;
   day = String(day).padStart(2, '0');
   month = String(month).padStart(2, '0');
+  chosenDay = day;
+  chosenMonth = month;
   document.getElementById('chooseDate').textContent = day+"/"+month+"/2021";
   clickedTable[0] = -1;
   clickedTable[1] = -1;
@@ -69,6 +72,8 @@ function getCurrentDate(){
   mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   var yyyy = today.getFullYear();
 
+  chosenMonth = mm;
+  chosenDay = day;
   today = day + '/' + mm + '/' + yyyy;
   return today;
 }
@@ -84,6 +89,7 @@ function getCurrentHour(){
   hh = hour - 10;
   hour = String(hour).padStart(2, '0');
   hour = hour + ":00";
+  chosenHour = hour;
   return hour;
 }
 
@@ -102,6 +108,7 @@ function choose() {
 }
 
 function hourClicked(hour, id){
+  chosenHour = hour;
   document.getElementById('chooseHour').textContent = hour;
   hh = id;
   clickedTable[0] = -1;
@@ -308,6 +315,30 @@ function closeTheFormReservation() {
 
 function closeTheFormShowReservationNumber(){
   document.getElementById('showReservationNumber').style.display = 'none';
+  let hour = hh % 8;
+  let day = dd % 14;
+  if(clickedTable[0] == 0 || clickedTable[1] == 0){
+    reservations[hour][day].table0 = "reserved";
+  }
+  if(clickedTable[0] == 1 || clickedTable[1] == 1){
+    reservations[hour][day].table1 = "reserved";
+  }  
+  if(clickedTable[0] == 2 || clickedTable[1] == 2){
+    reservations[hour][day].table2 = "reserved";
+  }  
+  if(clickedTable[0] == 3 || clickedTable[1] == 3){
+    reservations[hour][day].table3 = "reserved";
+  }  
+  if(clickedTable[0] == 4 || clickedTable[1] == 4){
+    reservations[hour][day].table4 = "reserved";
+  }  
+  if(clickedTable[0] == 5 || clickedTable[1] == 5){
+    reservations[hour][day].table5 = "reserved";
+  }  
+
+  clickedTable[0] = -1;
+  clickedTable[1] = -1;
+  updateTables();
 }
 
 function closeThePaymentForm() {
@@ -833,32 +864,27 @@ function updateTables(){
   console.log("Update tables: " + day + " " + hour);
 }
 
+function prepareSumbitReservation(){
+  let text = chosenDay + '/' + chosenMonth + '/2021' + ' o godzinie ' + chosenHour;
+  return text;
+}
+
+function prepareReservationNumber(){
+  let min = 100000;
+  let max = 999999;
+  Math.ceil(min);
+  Math.floor(max);
+  let reservationNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return reservationNumber;
+}
+
 function submit() {
   document.getElementById('getUserDataForReservation').style.display = 'block';
-  // let hour = hh % 8;
-  // let day = dd % 14;
-  // if(clickedTable[0] == 0 || clickedTable[1] == 0){
-  //   reservations[hour][day].table0 = "reserved";
-  // }
-  // if(clickedTable[0] == 1 || clickedTable[1] == 1){
-  //   reservations[hour][day].table1 = "reserved";
-  // }  
-  // if(clickedTable[0] == 2 || clickedTable[1] == 2){
-  //   reservations[hour][day].table2 = "reserved";
-  // }  
-  // if(clickedTable[0] == 3 || clickedTable[1] == 3){
-  //   reservations[hour][day].table3 = "reserved";
-  // }  
-  // if(clickedTable[0] == 4 || clickedTable[1] == 4){
-  //   reservations[hour][day].table4 = "reserved";
-  // }  
-  // if(clickedTable[0] == 5 || clickedTable[1] == 5){
-  //   reservations[hour][day].table5 = "reserved";
-  // }  
-
-  // clickedTable[0] = -1;
-  // clickedTable[1] = -1;
-  // updateTables();
+  let textonSumbitReservation = 'Zapraszamy ' + prepareSumbitReservation();
+  let textonSumbitReservation2 = 'Numer rezerwacji:  ' + prepareReservationNumber();
+  console.log(textonSumbitReservation + ' =====' + textonSumbitReservation2);
+  document.getElementById('submit-message').textContent = textonSumbitReservation;
+  document.getElementById('sumbit-message2').textContent = textonSumbitReservation2;
 }
 
 function printReservationNumber(){
