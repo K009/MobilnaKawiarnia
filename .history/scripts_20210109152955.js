@@ -300,11 +300,6 @@ function closeTheBasket() {
   document.getElementById('basketForm').style.display = 'none';
 }
 
-function goBack() {
-  document.getElementById('getUserData').style.display = 'none';
-  document.getElementById('basketForm').style.display = 'block';
-}
-
 function closeThePaymentForm() {
   document.getElementById('payments').style.display = 'none';
   while (document.getElementById('summary'))
@@ -319,13 +314,16 @@ function closeThePaymentForm() {
     cartItemsGlobal.removeChild(cartItemsGlobal.firstChild);
     endPrice.innerText = '0.0 zł';
   }
-
+  let name = document.getElementById('name').value,
+    surname = document.getElementById('surname').value,
+    phone_number = document.getElementById('phone_number').value,
+    reservation_number = document.getElementById('reservation_number').value,
+    address = document.getElementById('address').value;
   document.getElementById('name').value = '';
-  document.getElementById('surname').value = '';
-  document.getElementById('phone_number').value = '';
-  document.getElementById('reservation_number').value = '';
-  document.getElementById('address').value = '';
-
+  surname = '';
+  phone_number = '';
+  reservation_number = '';
+  address = '';
   productsInBasket = [];
 }
 
@@ -459,6 +457,13 @@ function goToPayment() {
   if (productsInBasket.length === 1) createProduct(productsInBasket, 1);
   if (productsInBasket.length === 2) createProduct(productsInBasket, 2);
   if (productsInBasket.length >= 3) createProduct(productsInBasket, 3);
+  // for (let i = 0; i < productsInBasket.length; i++) {
+  //   let tag = document.createElement('summary');
+  //   var text = document.createTextNode(productsInBasket[i]);
+  //   tag.appendChild(text);
+  //   var element = document.getElementById('payments');
+  //   element.appendChild(tag);
+  // }
 
   let total = 0,
     length = productsComplex.length;

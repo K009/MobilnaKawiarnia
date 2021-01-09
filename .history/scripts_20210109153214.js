@@ -300,11 +300,6 @@ function closeTheBasket() {
   document.getElementById('basketForm').style.display = 'none';
 }
 
-function goBack() {
-  document.getElementById('getUserData').style.display = 'none';
-  document.getElementById('basketForm').style.display = 'block';
-}
-
 function closeThePaymentForm() {
   document.getElementById('payments').style.display = 'none';
   while (document.getElementById('summary'))

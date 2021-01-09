@@ -544,19 +544,6 @@ header a {
   font-size: 1.75em;
 }
 
-.formula1 {
-  font-size: 1em;
-  top: 328;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  margin-left: 180;
-  position: absolute;
-}
-.formula2 {
-  margin-bottom: 10;
-  margin-left: 330;
-}
-
 .input-data {
   float: left;
   margin-top: 8px;
@@ -727,10 +714,4 @@ img:hover {
 .toClose:hover::after {
   height: 50px;
   transform: rotate(0deg);
-}
-
-#arrow {
-  height: 100px;
-  position: absolute;
-  left: 0;
 }

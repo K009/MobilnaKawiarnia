@@ -546,15 +546,11 @@ header a {
 
 .formula1 {
   font-size: 1em;
-  top: 328;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  margin-left: 180;
+  text-align: left;
   position: absolute;
 }
 .formula2 {
   margin-bottom: 10;
-  margin-left: 330;
 }
 
 .input-data {

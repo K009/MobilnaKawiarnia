@@ -544,17 +544,9 @@ header a {
   font-size: 1.75em;
 }
 
-.formula1 {
+.payment {
   font-size: 1em;
-  top: 328;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  margin-left: 180;
-  position: absolute;
-}
-.formula2 {
-  margin-bottom: 10;
-  margin-left: 330;
+  float: left;
 }
 
 .input-data {
