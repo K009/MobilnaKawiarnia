@@ -480,7 +480,11 @@ function validateForm() {
   } else if (phone_number.length < 9) {
     alert('Numer telefonu musi mieć conajmniej 9 znaków');
     return false;
-  }
+  }  
+    else if((reservation_number != '') && (address != '')){
+      alert ('Jedno z pól ADRES DOSTAWY i NUMER REZERWACJI musi pozostać puste\nJeśli decydujesz się na dostawę do domu, podaj adres.\nJeśli zamówienie jest dopełnieniem do rezerwacji stolika, wpisz numer rezerwacji');
+      return false;
+    }
   return true;
 }
 
