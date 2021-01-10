@@ -41,11 +41,13 @@ let isTodayOpen = true;
 // })
 
 function updateDateButton(day, month) {
+  choose();
   dd = day;
-  mm = month;
   month = month + 1;
+  mm = month;
   day = String(day).padStart(2, '0');
   month = String(month).padStart(2, '0');
+  console.log(month + ' MONTH');
   chosenDay = day;
   chosenMonth = month;
   document.getElementById('chooseDate').textContent = day+"/"+month+"/2021";
@@ -95,9 +97,10 @@ function choose() {
   // if (!document.getElementById('demo')) {
   //   document.getElementById('demo').style.display === 'block';
   // }
-  if (document.getElementById('demo').style.display === 'block') {
+  console.log(document.getElementById('demo').style.display);
+  if (document.getElementById('demo').style.display == 'block') {
     document.getElementById('demo').style.display = 'none';
-  } else if (document.getElementById('demo').style.display === 'none') {
+  } else if (document.getElementById('demo').style.display == 'none') {
     document.getElementById('demo').style.display = 'block';
   }
 }
@@ -750,8 +753,141 @@ function printReservationNumber(){
   document.getElementById('showReservationNumber').style.display = 'block';
 }
 
+function nextDay(day){
+  if (day == 13){
+    return 0;
+  }
+  return day + 1;
+}
+
+function findNearestFreeDate(tableId){
+  let freeDay = 0;
+  let hour = (hh % 8);
+  switch (tableId){
+    case "0":
+      for(let day = dd % 14; day != (dd % 14) - 1;){
+        for(; hour != 8;){
+          if(reservations[hour][day].table0 != "free"){
+            hour = hour + 1;
+            continue;
+          }
+          else{
+            prepareFreeInformation(hour, freeDay);
+            return [hour, freeDay];
+          }
+        }
+        day = nextDay(day);
+        freeDay = freeDay + 1;
+        hour = 0;
+      }
+    break;
+
+    case "1":
+      for(let day = dd % 14; day != (dd % 14) - 1;){
+        for(; hour != 8;){
+          if(reservations[hour][day].table1 != "free"){
+            hour = hour + 1;
+            continue;
+          }
+          else{
+            prepareFreeInformation(hour, freeDay);
+            return [hour, freeDay];
+          }
+        }
+        day = nextDay(day);
+        freeDay = freeDay + 1;
+        hour = 0;
+      }
+    break;
+
+    case "2":
+      for(let day = dd % 14; day != (dd % 14) - 1;){
+        for(; hour != 8;){
+          if(reservations[hour][day].table2 != "free"){
+            hour = hour + 1;
+            continue;
+          }
+          else{
+            prepareFreeInformation(hour, freeDay);
+            return [hour, freeDay];
+          }
+        }
+        day = nextDay(day);
+        freeDay = freeDay + 1;
+        hour = 0;
+      }
+    break;
+
+    case "3":
+      for(let day = dd % 14; day != (dd % 14) - 1;){
+        for(; hour != 8;){
+          if(reservations[hour][day].table3 != "free"){
+            hour = hour + 1;
+            continue;
+          }
+          else{
+            prepareFreeInformation(hour, freeDay);
+            return [hour, freeDay];
+          }
+        }
+        day = nextDay(day);
+        freeDay = freeDay + 1;
+        hour = 0;
+      }
+    break;
+
+    case "4":
+      for(let day = dd % 14; day != (dd % 14) - 1;){
+        for(; hour != 8;){
+          if(reservations[hour][day].table4 != "free"){
+            hour = hour + 1;
+            continue;
+          }
+          else{
+            prepareFreeInformation(hour, freeDay);
+            return [hour, freeDay];
+          }
+        }
+        day = nextDay(day);
+        freeDay = freeDay + 1;
+        hour = 0;
+      }
+    break;
+
+    case "5":
+      for(let day = dd % 14; day != (dd % 14) - 1;){
+        for(; hour != 8;){
+          if(reservations[hour][day].table5 != "free"){
+            hour = hour + 1;
+            continue;
+          }
+          else{
+            prepareFreeInformation(hour, freeDay);
+            return [hour, freeDay];
+          }
+        }
+        day = nextDay(day);
+        freeDay = freeDay + 1;
+        hour = 0;
+      }
+    break;
+  }
+
+}
+
+function prepareFreeInformation(freeHour, dayToAdd){
+  let dayNext = String(dd + dayToAdd).padStart(2, '0');
+  freeHour = String(freeHour + 10 +':00');
+  let month = String(mm).padStart(2, '0');
+  let text = dayNext + "/" + month + '/2021 o godzinie ' + freeHour;
+  document.getElementById('tableReserved').textContent = text;
+}
+
 function tableClicked(id) {
+  console.log(document.getElementById(id).id)
   if (document.getElementById(id).style.fill == 'rgb(179, 36, 0)') {
+    findNearestFreeDate(id);
+    document.getElementById('showFreeInformation').style.display = 'block';
     return;
   }
 
@@ -769,6 +905,11 @@ function tableClicked(id) {
     document.getElementById(id).style.fill = 'rgb(125, 185, 125)';
     return;
   }
+}
+
+
+function closeTheFormInfoReserved(){
+  document.getElementById('showFreeInformation').style.display = 'none';
 }
 
 function addClickedTable(id) {

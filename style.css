@@ -134,6 +134,30 @@ a {
   width: 100px;
   bottom: 10px;
 } */
+/* #tableReserved{
+  position: absolute;
+  background-color: #88e388;
+  z-index: 1000;
+  width: 100;
+} */
+h1 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+
+#sumbit-message2{
+  color:red;
+}
+
+#textContainer{
+  margin-top: 20%;
+}
+
+#textContainer2{
+  margin-top: 10%;
+}
 
 .yui3-button {
   margin: 10px 0px 10px 0px;
