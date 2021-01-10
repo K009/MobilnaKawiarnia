@@ -62,7 +62,7 @@ a {
   z-index: 10000;
 }
 #submitDate:disabled {
-  background-color: #636363;
+  background-color: red;
 }
 #chooseDate {
   margin: 0px auto 80px auto;

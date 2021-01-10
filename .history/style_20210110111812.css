@@ -61,9 +61,6 @@ a {
   font-weight: bold;
   z-index: 10000;
 }
-#submitDate:disabled {
-  background-color: #636363;
-}
 #chooseDate {
   margin: 0px auto 80px auto;
   font-size: 1.75em;

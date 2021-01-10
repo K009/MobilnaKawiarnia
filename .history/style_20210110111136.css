@@ -40,13 +40,12 @@ a {
   fill: #6d9e6d;
 }
 #bottomButton {
-  background-color: transparent;
+  background-color: gray;
   text-align: center;
   position: absolute;
   width: 100%;
   height: 40;
   bottom: 60px;
-  z-index: 1;
 }
 #submitDate {
   margin: 0px auto 80px auto;
@@ -59,10 +58,6 @@ a {
   border-radius: 0.3em;
   padding: 3;
   font-weight: bold;
-  z-index: 10000;
-}
-#submitDate:disabled {
-  background-color: #636363;
 }
 #chooseDate {
   margin: 0px auto 80px auto;
@@ -81,7 +76,7 @@ a {
   background-color: #636363;
 }
 #bottomMenu {
-  background-color: gray;
+  background-color: transparent;
   text-align: center;
   position: absolute;
   width: 100%;
@@ -182,7 +177,6 @@ a {
   border: 2px solid;
   border-color: black;
   display: none;
-  z-index: 10;
 }
 .back {
   background-color: gainsboro;
